@@ -1,0 +1,1352 @@
+.fall-back-container {
+    padding-top: 80px;
+    background-color: var(--white);
+    max-width: 100vw;
+    overflow: hidden
+}
+
+@media only screen and (max-width:1300px) {
+    .fall-back-container {
+        padding-top: 66px
+    }
+}
+
+.fall-back-container .title {
+    font-family: var(--font-merriweather-light);
+    font-size: 32px;
+    line-height: 1.6;
+    letter-spacing: -.02em;
+    margin-bottom: 10px
+}
+
+@media only screen and (max-width:480px) {
+    .fall-back-container .title {
+        font-size: 24px
+    }
+}
+
+.fall-back-container .desc {
+    font-family: var(--font-roboto-light);
+    font-size: 20px;
+    line-height: 1.48
+}
+
+.fall-back-container .book-item a {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    display: block;
+    position: relative;
+    overflow: hidden
+}
+
+.fall-back-container .book-item a:before {
+    background: url(/static/media/bg-book.6dea348f.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .6
+}
+
+.fall-back-container .page-banner {
+    background-color: var(--white-100);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    padding: 0 60px
+}
+
+@media only screen and (max-width:1300px) {
+    .fall-back-container .page-banner {
+        padding: 0 20px
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .fall-back-container .page-banner {
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column
+    }
+
+    .fall-back-container .page-banner .image {
+        width: 400px
+    }
+
+    .fall-back-container .page-banner .content {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+        width: 100%
+    }
+}
+
+@media only screen and (max-width:480px) {
+
+    .fall-back-container .page-banner .content,
+    .fall-back-container .page-banner .image {
+        max-width: 300px
+    }
+
+    .fall-back-container .page-banner .wrap-button .ml20 {
+        margin-left: 0 !important;
+        margin-top: 20px
+    }
+}
+
+.fall-back-container .page-banner .image {
+    padding-top: 23px
+}
+
+.fall-back-container .page-banner .desc {
+    margin-bottom: 20px;
+    width: 538px;
+    max-width: 100%
+}
+
+.fall-back-container .what-we-are-reading {
+    background-color: var(--white);
+    position: relative;
+    padding-top: 129px;
+    padding-bottom: 110px;
+    width: 1096px;
+    max-width: calc(100% - 120px);
+    margin: 0 auto;
+    padding-right: 100px
+}
+
+@media only screen and (max-width:1300px) {
+    .fall-back-container .what-we-are-reading {
+        max-width: calc(100% - 40px)
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .what-we-are-reading {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-right: 0
+    }
+}
+
+.fall-back-container .what-we-are-reading .desktop-content {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    justify-content: flex-end;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    width: 870px;
+    max-width: calc(100vw - 60px);
+    margin: 0 0 0 auto
+}
+
+@media only screen and (max-width:991px) {
+    .fall-back-container .what-we-are-reading .desktop-content {
+        padding-left: 0
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .what-we-are-reading .desktop-content {
+        display: none
+    }
+}
+
+.fall-back-container .what-we-are-reading .desktop-content .books-col {
+    width: 100%
+}
+
+.fall-back-container .what-we-are-reading .desktop-content .books-row {
+    width: 25%;
+    min-width: 25%
+}
+
+.fall-back-container .what-we-are-reading .desktop-content .books-row:last-child {
+    width: auto;
+    min-width: auto;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1 1;
+    max-width: 75%
+}
+
+.fall-back-container .what-we-are-reading .desktop-content .books-row:last-child .books-col {
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    align-items: flex-end;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    justify-content: flex-start;
+    padding-right: 8.33333%
+}
+
+.fall-back-container .what-we-are-reading .desktop-content .books-row:last-child .books-col .book-item {
+    max-width: 33.33333%
+}
+
+.fall-back-container .what-we-are-reading .desktop-content .books-row:last-child .books-col:last-child {
+    padding-left: 8.33333%;
+    padding-right: 0;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    justify-content: flex-end
+}
+
+.fall-back-container .what-we-are-reading .desktop-content .book-item {
+    padding: 0 9px 18px
+}
+
+.fall-back-container .what-we-are-reading .desktop-content .book-item .overlay-button {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    transition: all .2s
+}
+
+.fall-back-container .what-we-are-reading .desktop-content .book-item .overlay-button:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    z-index: 1
+}
+
+.fall-back-container .what-we-are-reading .img-responsive {
+    width: 100%;
+    max-width: none
+}
+
+.fall-back-container .what-we-are-reading .mobile-content {
+    display: none
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .what-we-are-reading .mobile-content {
+        display: block;
+        padding-top: 30px
+    }
+}
+
+.fall-back-container .what-we-are-reading .mobile-content .books-row {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start
+}
+
+.fall-back-container .what-we-are-reading .mobile-content .books-row:first-child {
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    align-items: flex-end
+}
+
+.fall-back-container .what-we-are-reading .mobile-content .books-col {
+    padding-bottom: 20px
+}
+
+@media only screen and (max-width:480px) {
+    .fall-back-container .what-we-are-reading .mobile-content .books-col {
+        padding-bottom: 8px
+    }
+}
+
+.fall-back-container .what-we-are-reading .mobile-content .book-item {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px
+}
+
+.fall-back-container .what-we-are-reading .mobile-content .book-item:last-child {
+    padding-bottom: 0
+}
+
+@media only screen and (max-width:480px) {
+    .fall-back-container .what-we-are-reading .mobile-content .book-item {
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-bottom: 8px
+    }
+
+    .fall-back-container .what-we-are-reading .mobile-content .book-item:last-child {
+        padding-bottom: 0
+    }
+}
+
+.fall-back-container .what-we-are-reading .content {
+    position: absolute;
+    top: 84px;
+    left: 0
+}
+
+@media only screen and (max-width:1300px) {
+    .fall-back-container .what-we-are-reading .content {
+        left: 20px
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .fall-back-container .what-we-are-reading .content {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center
+    }
+
+    .fall-back-container .what-we-are-reading .content .desc {
+        margin: 0 auto
+    }
+}
+
+.fall-back-container .what-we-are-reading .content .desc {
+    width: 421px;
+    max-width: calc(100% - 20px);
+    margin: 0 auto
+}
+
+@media only screen and (max-width:1200px) {
+    .fall-back-container .what-we-are-reading .content .desc {
+        padding-bottom: 40px
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .fall-back-container .what-we-are-reading .content .desc {
+        width: 300px;
+        padding-bottom: 0
+    }
+}
+
+.fall-back-container .buzzworthy-hardcovers {
+    padding-top: 75px;
+    padding-bottom: 60px;
+    position: relative
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .buzzworthy-hardcovers {
+        padding: 50px 0 0
+    }
+}
+
+.fall-back-container .buzzworthy-hardcovers:before {
+    position: absolute;
+    content: "";
+    background-color: var(--white-200);
+    top: 0;
+    bottom: 160px;
+    width: 100%;
+    left: 0
+}
+
+.fall-back-container .buzzworthy-hardcovers .title {
+    text-align: center;
+    position: relative;
+    line-height: 1
+}
+
+.fall-back-container .buzzworthy-hardcovers .desc {
+    position: relative;
+    padding-bottom: 55px;
+    text-align: center;
+    max-width: calc(100% - 40px);
+    margin: 0 auto
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .buzzworthy-hardcovers .desc {
+        padding-bottom: 0
+    }
+}
+
+.fall-back-container .buzzworthy-hardcovers .scroll-container {
+    max-width: calc(100% - 40px);
+    margin: 0 auto
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .buzzworthy-hardcovers .scroll-container {
+        max-width: 100%;
+        width: 100%;
+        overflow: auto;
+        padding: 30px 0 50px
+    }
+}
+
+.fall-back-container .buzzworthy-hardcovers .list-books {
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    width: 1292px;
+    max-width: 100%;
+    margin: 0 auto;
+    min-width: 750px
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .buzzworthy-hardcovers .list-books {
+        -ms-flex-pack: distribute;
+        -webkit-justify-content: space-around;
+        -moz-justify-content: space-around;
+        justify-content: space-around
+    }
+}
+
+.fall-back-container .buzzworthy-hardcovers .list-books .book-item {
+    width: 218px;
+    max-width: calc(20% - 20px);
+    box-shadow: 0 19px 34px rgba(0, 0, 0, .295771);
+    transition: all .2s
+}
+
+.fall-back-container .buzzworthy-hardcovers .list-books .book-item:hover {
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15)
+}
+
+.fall-back-container .buzzworthy-hardcovers .list-books .book-item a {
+    border-radius: 1.25692px 3.14229px 3.14229px 1.25692px;
+    box-shadow: none
+}
+
+.fall-back-container .timeless-paperbacks {
+    overflow-x: hidden;
+    padding-top: 92px
+}
+
+@media only screen and (max-width:1200px) {
+    .fall-back-container .timeless-paperbacks {
+        padding-top: 60px
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .fall-back-container .timeless-paperbacks {
+        padding-top: 40px
+    }
+}
+
+.fall-back-container .timeless-paperbacks .content {
+    text-align: center
+}
+
+.fall-back-container .timeless-paperbacks .title {
+    text-align: left;
+    padding-left: 45%;
+    line-height: 1;
+    padding-top: 21px
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .title {
+        padding: 0 20px;
+        text-align: center
+    }
+}
+
+.fall-back-container .timeless-paperbacks .desc {
+    text-align: left;
+    position: relative;
+    left: 45%;
+    max-width: 55%;
+    width: 667px;
+    padding-right: 20px;
+    padding-bottom: 15px
+}
+
+@media only screen and (max-width:991px) {
+    .fall-back-container .timeless-paperbacks .desc {
+        padding-bottom: 0
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .desc {
+        padding: 0 20px 40px;
+        left: 0;
+        max-width: 100%;
+        width: 100%;
+        text-align: center
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books {
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    width: 1096px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 0 0 355px
+}
+
+@media only screen and (max-width:991px) {
+    .fall-back-container .timeless-paperbacks .list-books {
+        padding: 0 0 33%
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .list-books {
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
+        padding-top: 45%
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .fall-back-container .timeless-paperbacks .list-books {
+        padding-bottom: 40%
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item {
+    width: 250px;
+    box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, .25)
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:hover {
+    z-index: 3
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:hover .overlay-button {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: all .2s
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item {
+        width: 33.33333%
+    }
+
+    .fall-back-container .timeless-paperbacks .list-books .book-item a {
+        display: block;
+        width: 250px;
+        max-width: 100%
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item a {
+    border-radius: 1.25692px 3.14229px 3.14229px 1.25692px;
+    box-shadow: none
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:first-child {
+    position: relative
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:first-child a {
+    position: relative;
+    z-index: 2
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:first-child {
+        -webkit-transform: translateY(calc(-50% - 25px));
+        -ms-transform: translateY(calc(-50% - 25px));
+        transform: translateY(calc(-50% - 25px));
+        left: 25px
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:first-child:before {
+    content: "";
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAoCAYAAAC4h3lxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMGSURBVHgB7ZlNTttQEMf/7zkIs2q6a1Al4AQlJ8A9AU7oPnRRSNRFwgmAG4QVtF0U9hWYEyScgPQEpFJJUDewqeKo+E3npbiqogbIwx9FzU+KbNmONTNvZt7MWOAf4KzmZqe+T80DP/D8g9cKr3974y4GVibr29ethbp39bf/ZpASWuiZnlUiARc9WhSZ6zYU9vnWbwWuM9IRFCzbvnQ6a8WN2feH9eH3CKREt1z8SISskFT3p+nzKAuHaIX1M9314iVL7QFqO7fntVNTwJRu2Z3nQwmQq2TBSUSBgbv05SaR2tFWQ4RIxIy22HRfNBQ7eNTCa2JV4Ndyy4Yg8mZ3vQ3EQKwKkBBHHGz7bPltPEbOK66LCRPG42KtWPvKJQASItIg1lmHJFUtC1dIiIizkNzk6qQZR74fRdTFnMNp8yUSJLIV4OJslTN/O0nrayJbAStQrcBCGxMm/IfoAO5W3BJSIJIgFgIvoKz28PWL9ZUqCardPNXmFvJKyMAD4SSqbBVJGlUQ8ySUqzuvP6+TCI5126d/EGpLCDoGSUcJRFZqGLeUWlieFtTYmtWbN3m5vcPXSBijFdAFGwt/yiORJ5DkDqYEQjSRAkYxQFK1fBv5cBTSqRTzPL/5AgPOKyuupYKlZ+/MWs7UxyqX7Ip+T55xjBQ4sJsYk1tdqFt+5XTLKw0ukzcRE0/1KgrUiWQVBoxUgN2CA1QdQQSxN+W2rXb44AxnsfswUgFByvNn1EJu1zvAPdCjQhMBNHoVOMW2bH/89DoyiMfdaHiEkrX71jKf3kvhYZSgHUkPqGbZglsX64VlGDIoJ8qFBhJG6mXvVAqnfD7Xm6ETGMJ+zCWCWDR1I1Mkb0iuHv3pXfSuEfdthNmE32eUTUzJsOD7iAidTfw+xnbDcIbq2yr/ECOmho4/ncVgQALT6bueKW5xDivpLy4wILZSYlAicMHHp02200Fu71Nz+JlOuVBnCZY4Bgum/UGstdCNbzu8SVVJcc8g0Z7dPcyH98PvXngMDNL12+IcIuYnOW1ICAiYxg0AAAAASUVORK5CYII=) no-repeat 50%;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 40px;
+    -webkit-transform: translate(-65px, -70px);
+    -ms-transform: translate(-65px, -70px);
+    transform: translate(-65px, -70px);
+    background-size: contain
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:first-child:before {
+        width: 24%;
+        height: 13%;
+        max-width: 48px;
+        max-height: 40px;
+        -webkit-transform: translate(-100%, -160%);
+        -ms-transform: translate(-100%, -160%);
+        transform: translate(-100%, -160%)
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:first-child:after {
+    content: "";
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGIAAABrCAYAAACMqlfGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUfSURBVHgB7dxNUhtXEADg7jd2JO/IJjEkVSgnMDlBpBN4JLIHFjEoWQAnMDqB8CIBKgsp6yRIPoGUExhOYLkqllTZQBYppIrnPXdr5DK2ESCk0Xsz6q8KjBGUgNa8n+5+AyCEEEIIIYQQQoiY6G6u1jpbfhbEJxTMkNJBid5X2k8KOyA+MNNAfPFr/QRA51DBIxBuoCEqI1fGezO9Ii5Lp+FceWats1WogLAXiM/36+eplMmhgQWaxLdBCCHc1dn6Pvtyx1+AOWNtjhgtWE/1sTFvwXAuEIuHtXWawE/TPVUGYV9nK1+Vpa0jupsFyk0VnsIcuAcOSz3QG70ezN3ELYSIFZrAG0mtZzi4jxjNC8wuAFY4cwsJE6tAhPUMQ8UlbCQtGLEKBFs8rFcpGFWDWEvS7jt2gWAUjJICbD64wO9ACCHcxHNF3OeLWM4RH6NMrZ/uYQ2EfbzZ6276sU2dJ+KKCJkNg8qP684bIUHCIGCllzbffrNfP4cYSdAVMdhfNHmzJ/sLIYQQN6F6997fP/grEAOJmqyv0PI8lLYcFwyqekV/DRyX9CsCBoUkg3uu56ISH4hwbwEtykc53fqf+EBwSZVr3Wi00zvtRKU4GLdpGoQVPgBD/83QW8ugri8d1Hcvfc06GCgbBS3Q2EI0Jxrx9KuDP+tgSawDwS38AG9aNPy03n2u+2P+8Zv/zSv1mTpb+vn41ajv5Tnj/n+QuXcfl41GWuKaLOWo8rZyVLELBP8BabzfoVf0NtArmbOulwMxLWGXCDborQmgS1E8x2WxCgRv0OgfWorqqjJY//KodjrO959REPsX8PTh0fth6vrn42AoboLO0luTPv5t8fCPJsw7HtsnXYZ2Ngtnd6lZ8HN3i/kX83iaCaL4pbnN38VWfyfb8sMhwauYC8MTZx6mKFDecxUENPZDCSbUfVLYMUqfDPcqE3FuH/G66Ptg1As0QX3p6HiqQWBf//L7CSKcT6OkykHge4sM566JOBUI/oVoEi57WudoQn0G0anSMmUZJhReCTpH+5DH7c1CclpAw/E7ns3F3WKh3KbJHIR9nWJeauViAjwMdbZWG5BA484XVidrNB5Vz4ImWDCYjyIsGKX63lh3arMWCE7YUVZ0hc86gC1GZSAitPzeRWW2b7v4sHhF6DX6affAEjTIm8UMRCRMEmKVOw9v8/VWAnEWjp/rvRQ8B0sMmn8hYouHx3zeL3ObzaOVQPDdy+glmbXcn8obuhZETm/QuxuXtdZyTYsHtb/AsuHwFKlhHqoJQgjXvS6u+pybgTnCWeXr2j+tTNYGVcsY8GGOeNpb9rzRvVVWAsE1ASr+L7R/Kkycir4LTqvM+oiXwYCX6tlRj9vb0CHsYwDrMGPhTldnplFVG8ewC6Q56nGLt6TWz2h42pl9MYW7MkwVLKAN3saox6zekppKjRvpGd4qLrwauJEMoqz+iZtQxvVlHFr0E892Be0fWr6OysY60zzA+4qo69W20yoBL1/Ru/LF4EwgjNGn3Gs6aKeZQ84EYnhnspwyqjyNPiHGDWCuzQmorz6n4VRfU7jW1jn6cJnPvsEd8ZKYb2mtPbNGG0frWd53emm9+/CodmUNxtlucP5j3qVeEZ6Z0BU+nNJPQSku9+SITVt+u7haC08BmSaf7lGDWsKHh1R4fqHP04QIey7UO8YRm0AMDqj08RElbbIUkBUqdVJQsHXdblUIIYQQQgghhBBCCCGEEEIIIYQQQggRS28BLNoMcZWuCigAAAAASUVORK5CYII=) no-repeat 50%;
+    position: absolute;
+    pointer-events: none;
+    bottom: 0;
+    right: 0;
+    width: 98px;
+    height: 107px;
+    -webkit-transform: translate(110px, 35px);
+    -ms-transform: translate(110px, 35px);
+    transform: translate(110px, 35px);
+    background-size: contain
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:first-child:after {
+        width: 42%;
+        height: 31%;
+        max-width: 98px;
+        max-height: 107px;
+        -webkit-transform: translate(100%, 35%);
+        -ms-transform: translate(100%, 35%);
+        transform: translate(100%, 35%)
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(2) {
+    position: relative;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: -30px
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(2) a {
+    position: relative;
+    z-index: 1
+}
+
+@media only screen and (max-width:991px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(2) {
+        left: 10px
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(2) {
+        -webkit-transform: translateY(calc(-100% - 25px));
+        -ms-transform: translateY(calc(-100% - 25px));
+        transform: translateY(calc(-100% - 25px))
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(3) {
+    -webkit-transform: translate(-35%, calc(50% + 25px));
+    -ms-transform: translate(-35%, calc(50% + 25px));
+    transform: translate(-35%, calc(50% + 25px));
+    position: relative
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(3) a {
+    position: relative;
+    z-index: 2
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(3) {
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+        left: -25px
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(3):before {
+    content: "";
+    background: url(/static/media/hard-covers-3.d7306399.png) no-repeat 50%;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    width: 121px;
+    height: 98px;
+    -webkit-transform: translate(75px, -150px);
+    -ms-transform: translate(75px, -150px);
+    transform: translate(75px, -150px);
+    background-size: contain
+}
+
+@media only screen and (max-width:991px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(3):before {
+        width: 78px;
+        height: 70px;
+        -webkit-transform: translate(50px, -110px);
+        -ms-transform: translate(50px, -110px);
+        transform: translate(50px, -110px)
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(3):before {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEcAAABMCAYAAAA/d6rcAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAS9SURBVHgB7ZvNUhtHEMe7R1RYkgu5pEziqshPEPEEiCfISsRn8CFBSg4mTwA8gZ1DElw+BM5JgXgC1k+A/ARsqhykm3UDldnpdK+kigB94Z3VjpT5VSFWq5G2ttXT0/2fFoDD4XBMD4SUudjxlz9p54oItIaEBSSqP3p1/DPMAAuQIo1KeQuu4AWgriOpGuR0cPOB/ob/O+9+fFpoVEoXjWppbdzYxnb5PRtyDywj9Wk1CY2KnwdQZ3x4tHJwvAeWoMACVg5qIYBe58PNyx/KO2AJVnhOj44HIXsQrXcMli3GPefd908L8JF0DIL7GuGjP8NqmtXy+eVP5a9hDjDuOUSwDHOCceMgQkvd0FxMizRWq4A/Ng8Jkekp2TVkSArTSp8Sah8SQoQtr43fQIYYNw6vOAFPrnzSoEw8PVFnG79Sqa2uPb365GWtBTNOKhmyCcMgr3qkIFMDW1E+DIKNU+PAk0kF30tkUy8f5EKPX/9ZhxmhybUdKXp+7dFq6p6zoKLd5rb/AmaA95I6IKxJbTeVmCkXbFZL5zbqNT2G1YNTqcrFQO02V9uagqsl2B/3rVxub5y0l6JnaX97jcp3RfaSXZZL8oOUgKkE5M/5JhcXaR2UAu8aR2a+oiAi6sI03Box4ukeBRJfbJBI2IX9kXUXT78/GlV/E4xf9+FSSuZilwhchOo5Ab5RXDKwi7PYpZ8k/Sa70muRD9eAwOc7bT00ObVEQy5vcV7zLZcMPkseLUSsA0aHK7/Xjm6PkxvuZyF+vnLwV3B7XOlMShg+DHg7qK4XqPblr8cPzpksk0l5KwfpgmWP5Yiff/XbyWn/67LqcUHaF68o5JtvXS3pZ/NQrjgcBrkfS+wg88JTahmOGydgIanulY8jXsYJdjkIr4KFZOo5uYiVPqV3rMhObUIKUf7bBYvJZFr9U93wgfSmFHtgMZkY59PFKOCMbS50ZofD8SASFZ4iTOWi6AykigYKNOJbRVF9XpbmxFW59PPxp9xW9lh2mAeDJV+tkPeXALbunGNjUZGPiopTYD4R8MN6V4DaFIPRjQpt37JJbBwRkwhp3KhAHjXmCmysvdhgnB6z18Uexu+vixJom8ESlw+E0em4MdKYHV+M6HbXRNfD2LY7/NpJLhedyzRtbpet2OdKbJxuLAlHjbnRvW1dLMI42GBK6yOwACOFJ3bizkBEE378ulbvPplgB0DvfdEbnzFGygc2wNthryF2plRX0BrZbyPNA49e1fbBEox4jufp4Z4TL+mdYAwjoZBQW/WDESPGkR1NnloDp4LiLeD4/91gfIdcRCXbciGTYlcw6GQvGLMHjfAce+JMP8aMI42Sg85/+KyzkuHwYHzIHmNNnOnHmHE8j6cV3W9Tk8aBRmVDfhGTv/8uCtlrrDSMYHTHs7sNW5z8Hcn3xNPEsMDeKRMmGkn2C+uGjaPfTDjwkPOZX8ByjBonbtCmce2xFF57duUzwzDf3q9GTK3YcFNqRjSAceMoPTjfEZDzmVkSvcx7zhAJg0uDl7MQZ/pJ44ch4f24Q2F7EazNZ4aRzl55v4QxY3Gmn7QaCf5b0me4USAV4/QkDIkzd5seHRCXEofgcDgcDofD4XA45oh/AXERDQl5/2eBAAAAAElFTkSuQmCC) no-repeat 50%;
+        background-size: contain;
+        width: 65%;
+        height: 46%;
+        right: auto;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        max-width: 71px;
+        max-height: 76px;
+        -webkit-transform: translate(-120%, 35%);
+        -ms-transform: translate(-120%, 35%);
+        transform: translate(-120%, 35%)
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(4) {
+    -webkit-transform: translate(30px, 25px);
+    -ms-transform: translate(30px, 25px);
+    transform: translate(30px, 25px);
+    position: relative
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(4) a {
+    position: relative;
+    z-index: 1
+}
+
+@media only screen and (max-width:991px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(4) {
+        -webkit-transform: translateY(15px);
+        -ms-transform: translateY(15px);
+        transform: translateY(15px);
+        left: 10px
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(4) {
+        top: 20px;
+        left: 5px
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(4):before {
+    content: "";
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAA/CAYAAAB5GjFNAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMjSURBVHgB7ZpNbtpAFMffs5Egq7abSpG6oDfgBiUnqDHdJ1204BXkBMAJoKtU6iLkBNATQE7Q9gTxosWoG7ILUcO8vgdRVaWID3tmTCp+UkIUbM/zm/F/3ocBLPPznVeIqm+KEAMHDCJGjSrl3t//m7lOgX83omrpKqr6TdgCBEOM3/t1QmiAo+qHZ/2Lh99HVS/PvmoQUuE2S0cvO/1rSAPx2MJzYtBqxhWvtslxgnbP/gjKnkOqDUBHhx/7IehkXCnXRkHpy1Xdewqa0Hmtf+BpmC94o4OstcE/WTf+XA14ulpI1MlNITVjmUb2l/MEbMCeiT0zEz6Pz6d1x2nRWZlCfqDCuPIznToef3TXHZeBpYOLlOBgNqPSi0/9r7AWPAZUXYjBvWw1ANTRumOXelYkRyGduo4zGLG4r7rAZD71VJxm4TPEIJeDa77RZmKZk7seV/zeqrUoWyoryQAskHhTEM9OWUU29YzcHBHVEGen23ozlrGLqOku3HQwmZmDG/eYYwUPiAo87R2RS9iSWMaOA79NBB4PLk//0FEYEuK3ZTcgOyQBNXmkPiB1D896lxCTRMsgCkqvgLDIf+b5IZOfYRyPWSOqlgffOaAGC2jZFNwMWtkmjWYKutFgLIV8mTxYIAMJQVEEZSdaS2wskfrgqlRDyz27ga10SIt05aZOTbZVMIwmnVWXhMoDw+jxbA4km8ibXg5ajH22yL3C3K37GgyicbvFC1JkfClow1b0tWfnkYzY1HIwEc/mXRfbYADtxnIONpRP9nARNGMoUyBOGrEBmjFirCnvGsvB3BmdKtwH5Xv+IB0c0IDxuoFUGR2ito6Hzbixi/BRvWUpO08a71qpyIiUIWL/4AYSaa+18lE2q1qEjpdkOVgz9n45SJMjhD17FoyCci8KvONtzkmtPpu5m7W4xN/cJlBPzdjn884ltThQ7236ckSqlW/W3y4b3JXW6yYbRupl+kV3B3e3w/PfsGo57Fy3RsqnUdU/h8cCd9m7j8tgabU+wNgbczoQ/eVIrYekStLA3mljBXmNi316Ii+17byxwijw6whq8hvyxEgWgBTqHQAAAABJRU5ErkJggg==) no-repeat 50%;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    right: 0;
+    width: 43px;
+    height: 63px;
+    -webkit-transform: translate(70px, 50px);
+    -ms-transform: translate(70px, 50px);
+    transform: translate(70px, 50px);
+    background-size: contain
+}
+
+@media only screen and (max-width:991px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(4):before {
+        -webkit-transform: translate(70px, 30px);
+        -ms-transform: translate(70px, 30px);
+        transform: translate(70px, 30px)
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .timeless-paperbacks .list-books .book-item:nth-child(4):before {
+        width: 28%;
+        height: 26%;
+        max-width: 43px;
+        max-height: 63px;
+        -webkit-transform: translate(120%, 15%);
+        -ms-transform: translate(120%, 15%);
+        transform: translate(120%, 15%)
+    }
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:last-child {
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
+    position: relative
+}
+
+.fall-back-container .timeless-paperbacks .list-books .book-item:last-child a {
+    position: relative;
+    z-index: 2
+}
+
+.fall-back-container .easy-listens {
+    background-color: var(--white-200);
+    padding-top: 80px;
+    padding-bottom: 80px
+}
+
+@media only screen and (max-width:991px) {
+    .fall-back-container .easy-listens {
+        margin-top: 0
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .easy-listens {
+        padding: 70px 0 10px
+    }
+}
+
+.fall-back-container .easy-listens .title {
+    text-align: center;
+    position: relative
+}
+
+.fall-back-container .easy-listens .desc {
+    text-align: center;
+    max-width: calc(100% - 40px);
+    margin: 0 auto 50px
+}
+
+@media only screen and (max-width:480px) {
+    .fall-back-container .easy-listens .desc {
+        margin-bottom: 0
+    }
+}
+
+.fall-back-container .easy-listens .scroll-container {
+    max-width: calc(100% - 40px);
+    margin: 0 auto
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .easy-listens .scroll-container {
+        max-width: 100%;
+        width: 100%;
+        overflow: auto;
+        padding: 60px 0 50px
+    }
+}
+
+.fall-back-container .easy-listens .list-books {
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    width: 1292px;
+    max-width: 100%;
+    margin: 0 auto;
+    min-width: 750px
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .easy-listens .list-books {
+        -ms-flex-pack: distribute;
+        -webkit-justify-content: space-around;
+        -moz-justify-content: space-around;
+        justify-content: space-around
+    }
+}
+
+.fall-back-container .easy-listens .list-books .book-item {
+    width: 218px;
+    max-width: calc(20% - 20px);
+    box-shadow: 0 19px 34px rgba(0, 0, 0, .295771);
+    transition: all .2s
+}
+
+.fall-back-container .easy-listens .list-books .book-item:hover {
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15)
+}
+
+.fall-back-container .easy-listens .list-books .book-item a {
+    border-radius: 1.25692px 3.14229px 3.14229px 1.25692px;
+    box-shadow: none
+}
+
+.fall-back-container .discussion-section {
+    width: 1130px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .discussion-section {
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-bottom: 50px
+    }
+}
+
+.fall-back-container .discussion-section .image {
+    width: 312px;
+    min-width: 312px;
+    padding: 58px 0 130px
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .discussion-section .image {
+        padding-bottom: 50px
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .fall-back-container .discussion-section .image {
+        width: 300px;
+        min-width: 300px;
+        max-width: 100%;
+        padding-bottom: 40px;
+        padding-top: 70px
+    }
+}
+
+.fall-back-container .discussion-section .content {
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1 1;
+    padding-left: 130px;
+    padding-right: 20px;
+    max-width: calc(100% - 312px)
+}
+
+@media only screen and (max-width:991px) {
+    .fall-back-container .discussion-section .content {
+        padding-left: 50px
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .discussion-section .content {
+        padding: 40px 0 0;
+        width: 100%;
+        max-width: 100%
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .fall-back-container .discussion-section .content {
+        width: 300px;
+        margin: 0 auto;
+        max-width: 100%;
+        padding-top: 0
+    }
+}
+
+.fall-back-container .discussion-section .content .section-title {
+    font-family: var(--font-merriweather-light);
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 22px
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .discussion-section .content .section-title {
+        margin-bottom: 15px
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .fall-back-container .discussion-section .content .wrap-button {
+        text-align: center
+    }
+}
+
+.fall-back-container .discussion-section .content .desc {
+    margin-bottom: 80px
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .discussion-section .content .desc {
+        margin-bottom: 30px
+    }
+}
+
+.fall-back-container .partnership {
+    padding-top: 57px;
+    padding-bottom: 97px
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .partnership {
+        padding-bottom: 30px;
+        padding-top: 50px
+    }
+}
+
+.fall-back-container .partnership .section-title {
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    font-family: var(--font-montserrat-semibold);
+    font-size: 14px;
+    line-height: 1.4;
+    text-transform: uppercase
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .partnership .section-title {
+        margin-bottom: 0
+    }
+}
+
+.fall-back-container .partnership .scroll-container {
+    max-width: calc(100% - 40px);
+    margin: 0 auto
+}
+
+@media only screen and (max-width:767px) {
+    .fall-back-container .partnership .scroll-container {
+        max-width: 100%;
+        width: 100%;
+        overflow: auto;
+        padding: 30px 0
+    }
+}
+
+.fall-back-container .partnership .list-of-partnerships {
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    width: 1292px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px
+}
+
+.fall-back-container .partnership .list-of-partnerships .item {
+    width: 218px;
+    background-color: #f5f5f5;
+    margin: 0 10px;
+    transition: all .2s;
+    position: relative
+}
+
+.fall-back-container .partnership .list-of-partnerships .item:hover {
+    -webkit-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15)
+}
+
+.fall-back-container .partnership .list-of-partnerships .item a {
+    box-shadow: none;
+    display: block
+}
+
+.fall-back-container .partnership .list-of-partnerships .item .img-partnership {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-height: 130px;
+    height: 100%;
+    max-width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.enable-fallback {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 180px
+}
+
+.enable-fallback .navbar {
+    min-height: 80px
+}
+
+@media only screen and (max-width:1300px) {
+    .enable-fallback {
+        height: 166px
+    }
+
+    .enable-fallback .navbar {
+        min-height: 66px
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .enable-fallback {
+        height: 165px
+    }
+
+    .enable-fallback .navbar .navbar-collapse .nav-container {
+        top: 165px;
+        height: calc(100% - 165px)
+    }
+
+    .enable-fallback .btn-signin-rw {
+        top: 122px
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .enable-fallback {
+        height: 216px
+    }
+
+    .enable-fallback .navbar .navbar-collapse .nav-container {
+        top: 216px;
+        height: calc(100% - 216px)
+    }
+
+    .enable-fallback .btn-signin-rw {
+        top: 172px
+    }
+}
+
+.enable-fallback+.main-container {
+    padding-top: 180px
+}
+
+@media only screen and (max-width:1300px) {
+    .enable-fallback+.main-container {
+        padding-top: 166px
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .enable-fallback+.main-container {
+        padding-top: 216px
+    }
+}
+
+.announcement-bar {
+    position: relative;
+    height: 100px;
+    min-height: 100px;
+    background-color: var(--blue-300);
+    width: 100%;
+    text-align: center
+}
+
+@media only screen and (max-width:480px) {
+    .announcement-bar {
+        height: 150px;
+        min-height: 150px
+    }
+}
+
+.announcement-bar .title {
+    font-family: var(--font-merriweather-light);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    color: var(--white);
+    text-align: center
+}
+
+@media only screen and (max-width:480px) {
+    .announcement-bar .title {
+        width: 300px;
+        margin: 0 auto 10px
+    }
+}
+
+.announcement-bar .desc {
+    font-family: var(--font-montserrat-semibold);
+    font-size: 14px;
+    line-height: 1.4;
+    padding-bottom: 20px;
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center
+}
+
+.announcement-bar .desc,
+.announcement-bar .desc span {
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex
+}
+
+.announcement-bar .desc span {
+    height: 12px;
+    margin-left: 3px;
+    position: relative;
+    top: -7px
+}
+
+@media only screen and (max-width:480px) {
+    .announcement-bar .desc span {
+        top: -3px;
+        margin-left: 0
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .announcement-bar .desc {
+        width: 300px;
+        display: inline-block;
+        margin: 0 auto
+    }
+}
+
+.announcement-bar .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none
+}
+
+.announcement-bar .btn-close:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+.announcement-bar .btn-close:after,
+.announcement-bar .btn-close:before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background-color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 50%
+}
+
+.announcement-bar .btn-close:before {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    -ms-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg)
+}
+
+.announcement-bar .btn-close:after {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    -ms-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg)
+}
