@@ -1,3 +1,4 @@
+<?php include('db.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +37,7 @@
                         <div class="skip-to-content"><a href="#content">Skip to content</a></div>
                         <div class="navbar-collapse">
                             <div class="nav-wrapper">
-                                <div class="header-group-button"><button id="bt-open-menu" type="button" aria-label="Open menu" class="btn btn-open-menu lines-button x "><span class="lines"></span></button></div><a href="signin.html" class="btn-signin-rw ">Sign in</a>
+                                <div class="header-group-button"><button id="bt-open-menu" type="button" aria-label="Open menu" class="btn btn-open-menu lines-button x "><span class="lines"></span></button></div><a href="signin.php" class="btn-signin-rw ">Sign in</a>
                                 <div aria-hidden="false" tabindex="-1" class="nav-container ">
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
@@ -57,13 +58,12 @@
                                                 <li class="m-sub-item"><a href="https://www.libgen.is/" target="_blank" class="m-link">Library Genesis</a></li>
                                             </ul>
                                         </li>
-                                        <li class="m-item"><a href="signin.html" class="m-link">Join a book club</a></li>
-                                        <li class="m-item"><a href="signin.html" class="m-link">Shop</a></li>
+                                        <li class="m-item"><a href="signin.php" class="m-link">Join a book club</a></li>
+                                        <li class="m-item"><a href="signin.php" class="m-link">Shop</a></li>
                                         <li class="m-item"><a href="about.html" class="m-link">About</a></li>
-                                        <li class="m-item"><a href="signin.html" class="m-link">Sign in</a></li>
-                                        <li class="m-item"><a href="getstarted.html" class="mtr-button btn-white">Sign up</a></li>
+                                        <li class="m-item"><a href="signin.php" class="m-link">Sign in</a></li>
                                         <li class="m-item text-center hidden-md hidden-lg">
-                                            <h4 class="mb-title">The best website<br />for organizing your book club</h4><a href="signup.html" class="btn btn-default-corner bg-transparent btn-create-club">Create a club</a>
+                                            <h4 class="mb-title">The best website<br />for organizing your book club</h4><a href="signup.php" class="btn btn-default-corner bg-transparent btn-create-club">Create a club</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -76,15 +76,17 @@
                         <div class="left-container">
                             <div class="signin-content">
                                 <div class="main-form-content signup-form-content">
-                                    <form class="main-form" novalidate="" method="POST" action="db.php">
+                                    <form class="main-form" novalidate="" method="POST" action="getstarted.php">
                                         <h1 class="title-form">Sign Up</h1>
+                                        <?php include('errors.php'); ?>
                                         <div class="form-group hidden"><span role="alert" class="notification-message error show"></span></div>
                                         <div class="form-group undefined"><input type="email" maxLength="255" id="email" aria-label="Your Email" aria-required="true" name="email" value="" placeholder="Your Email" class="form-control" /><span role="alert" class="notification-message error"></span></div>
                                         <div class="form-group undefined"><input type="text" maxLength="255" id="username" aria-label="Your Username" aria-required="true" name="username" value="" placeholder="Your Username" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-
+                                        <div class="form-group undefined"><input type="text" maxLength="255" id="state" aria-label="Your County/State" aria-required="true" name="state" value="" placeholder="Your County/State" class="form-control" /><span role="alert" class="notification-message error"></span></div>
+                                        <div class="form-group undefined"><input type="text" maxLength="255" id="city" aria-label="Your City/Town" aria-required="true" name="city" value="" placeholder="Your City/Town" class="form-control" /><span role="alert" class="notification-message error"></span></div>
                                         <div class="form-group undefined"><input type="password" maxLength="255" id="password" aria-label="Password" aria-required="true" name="password" value="" placeholder="Password" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-                                        <div class="form-group button-group"><button name="register" type="submit" class="btn btn-default-corner btn-signin">Get Started</button></div>
-                                    </form><a href="/signin" class="txt-forgot-link">Already have a Shelf Induldence account?</a><a href="/signin" class="btn btn-default-corner bg-transparent btn-create-new-club">SIGN IN</a>
+                                        <div class="form-group button-group"><button name="register" type="submit" class="mtr-button" >Get Started</button></div>
+                                    </form><a href="signin.php" class="txt-forgot-link">Already have a Shelf Induldence account?</a>
                                 </div>
                             </div>
                         </div>
@@ -102,7 +104,7 @@
                                 </div>
                                 <div class="footer-nav-item">
                                     <h3 class="nav-title">Community</h3>
-                                    <p class="nav-item"><a class="nav-link" href="signin.html">Join a Book Club</a></p>
+                                    <p class="nav-item"><a class="nav-link" href="signin.php">Join a Book Club</a></p>
                                 </div>
                                 <div class="footer-nav-item">
                                     <h3 class="nav-title">Support</h3>

@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,8 +64,12 @@
                                         <li class="m-item"><a href="signin.php" class="m-link">Join a book club</a></li>
                                         <li class="m-item"><a href="signin.php" class="m-link">Shop</a></li>
                                         <li class="m-item"><a href="about.html" class="m-link">About</a></li>
-                                        <li class="m-item"><a href="signin.php" class="m-link">Sign in</a></li>
-                                        <li class="m-item"><a href="getstarted.php" class="mtr-button btn-white">Sign up</a></li>
+                                        
+                                        <li class="m-item"><a href="getstarted.html" class="mtr-button btn-white">
+                                        	<?php if (isset($_SESSION['username'])) : ?>
+                									<h3><?php echo $_SESSION['username']; ?></h3>
+              									<?php endif ?>
+                                        </a></li>
                                         <li class="m-item text-center hidden-md hidden-lg">
                                             <h4 class="mb-title">The best website<br />for organizing your book club</h4><a href="signup.html" class="btn btn-default-corner bg-transparent btn-create-club">Create a club</a>
                                         </li>
@@ -80,7 +87,7 @@
                                         <div class="banner-content">
                                             <h1 class="banner-text">Its not gossip if the characters are fictional.</h1>
                                             <div class="wrap-button">
-                                                <a href="signup" class="mtr-button btn-20" aria-label="create your club">Create your club</a>
+                                                <a href="create-club.php" class="mtr-button btn-20" aria-label="create your club">Create your club</a>
                                             </div>
                                         </div>
                                         <picture>
@@ -649,3 +656,6 @@
 </body>
 
 </html>
+ <?php
+
+?>

@@ -1,3 +1,4 @@
+<?php include('db.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +36,7 @@
                         <div class="skip-to-content"><a href="#content">Skip to content</a></div>
                         <div class="navbar-collapse">
                             <div class="nav-wrapper">
-                                <div class="header-group-button"><button id="bt-open-menu" type="button" aria-label="Open menu" class="btn btn-open-menu lines-button x "><span class="lines"></span></button></div><a href="signin.html" class="btn-signin-rw ">Sign in</a>
+                                <div class="header-group-button"><button id="bt-open-menu" type="button" aria-label="Open menu" class="btn btn-open-menu lines-button x "><span class="lines"></span></button></div><a href="signin.php" class="btn-signin-rw ">Sign in</a>
                                 <div aria-hidden="false" tabindex="-1" class="nav-container ">
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
@@ -57,10 +58,9 @@
                                             </ul>
                                         </li>
                                         <li class="m-item"><a href="" class="m-link">Join a book club</a></li>
-                                        <li class="m-item"><a href="signin.html" class="m-link">Shop</a></li>
+                                        <li class="m-item"><a href="signin.php" class="m-link">Shop</a></li>
                                         <li class="m-item"><a href="about.html" class="m-link">About</a></li>
-                                        <li class="m-item"><a href="signin.html" class="m-link">Sign in</a></li>
-                                        <li class="m-item"><a href="getstarted.html" class="mtr-button btn-white">Sign up</a></li>
+                                        <li class="m-item"><a href="getstarted.php" class="mtr-button btn-white">Sign up</a></li>
                                         <li class="m-item text-center hidden-md hidden-lg">
                                             <h4 class="mb-title">The best website<br />for organizing your book club</h4><a href="signup.html" class="btn btn-default-corner bg-transparent btn-create-club">Create a club</a>
                                         </li>
@@ -75,12 +75,13 @@
                         <div class="left-container">
                             <div class="signin-content">
                                 <div class="main-form-content signin-form-content">
-                                    <form class="main-form" novalidate="">
+                                    <form class="main-form" novalidate="" method="POST" action="signin.php">
                                         <h1 class="title-form">Shelf Indulgence member? Log In</h1>
+                                        <?php include('errors.php'); ?>
                                         <div class="form-group hidden"><span role="alert" class="notification-message error show"></span></div>
-                                        <div class="form-group undefined"><input type="email" maxLength="255" id="email" aria-label="Your Email" name="email" aria-required="true" value="" placeholder="Your Email" class="form-control" /><span role="alert" class="notification-message error"></span></div>
+                                        <div class="form-group undefined"><input type="text" maxLength="255" id="username" aria-label="Your Username" name="username" aria-required="true" value="" placeholder="Your Username" class="form-control" /><span role="alert" class="notification-message error"></span></div>
                                         <div class="form-group undefined"><input type="password" maxLength="255" id="password" aria-label="Password" name="password" aria-required="true" value="" placeholder="Password" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-                                        <div class="form-group button-group"><button type="submit" class="mtr-button">Log in now</button></div>
+                                        <div class="form-group button-group"><button name="signin" type="submit"  class="mtr-button">Log in now</button></div>
                                     </form><a href="/forgot-password" class="txt-forgot-link">Forgot password?</a><a href="/signup" class="mtr-button btn-white btn-create-new-club">CREATE NEW CLUB</a>
                                 </div>
                             </div>
