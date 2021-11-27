@@ -22,6 +22,7 @@
     --font-montserrat-extrabold: "Montserrat ExtraBold", sans-serif
 }
 
+
 .arrow-box:before {
     border: 10px solid hsla(0, 0%, 100%, 0);
     content: " ";
@@ -5174,6 +5175,7 @@ a.content-pre-wrap {
     padding: 0 10px;
     width: 100%
 }
+
 
 .card-added {
     padding: 15px;
