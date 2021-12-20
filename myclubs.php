@@ -1,35 +1,46 @@
-<?php 
-session_start();
-
+<?php
+    session_start();
+    
+    $title = "List book";
+    $username=$_SESSION['username'];
+    
+    require_once "./functions/database_functions.php";
+    $conn = db_connect();
+    $result = getClubByUsername($conn, $username);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Create a book club</title>
-    <meta name="description" content="Shelfindulgence makes organizing a book club simple. Create clubs, schedule meetings, and choose books, all for free." />
+    
+    <title>Shelf indulgence</title>
+    <meta name="description" content="Shelf indulgence makes organizing a book club simple. Create clubs, schedule meetings, and choose books, all for free." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="cleartype" content="on" />
     <meta name="theme-color" content="#ffffff">
-
+    
     <!-- Font tags-->
-   
+    <link rel="preload" as="font" href="static/media/bookclubz.71358ad4.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="static/media/glyphicons-halflings-regular.448c34a5.woff2" type="font/woff2" crossorigin="anonymous">
     <!-- End Font tags -->
 
     <!-- Style Tags-->
     <link rel="stylesheet" href="static/css/vendors~main.css">
     <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/vendors~AboutOurClubPage.css">
-    <link rel="stylesheet" href="static/css/CreateClubPage.css">
+    <link rel="stylesheet" href="static/css/AboutPage.css">
+    <link rel="stylesheet" href="static/css/HomePage.css">
+    <link rel="stylesheet" href="static/css/vendors~react-slick.css">
     <!-- End Style Tags -->
+
+    
 </head>
 
 <body class="intent-mouse">
     <div id="root">
         <div>
-            <div></div>
-            <div class="wrapper-container undefined">
-                <header class="header-container">
+            <div class="bg-homepage-fix homepage-container">
+                <div class="wrapper-container undefined">
+                    <header class="header-container">
                     <nav class="navbar">
                         <div class="navbar-header">
                             <div class="navbar-brand logo"><a href="home.php" aria-label="Link to Shelf Indulgence&#x27;s Homepage"><img width="233" height="30" src="static/media/logo.png" class="img-responsive" alt="" /></a></div>
@@ -53,24 +64,17 @@ session_start();
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                  <li class="m-sub-item"><a href="joinclub.php" class="m-link">Join a club</a></li>
                                                 <li class="m-sub-item"><a href="myclubs.php"  class="m-link">My clubs</a></li>
+                                                <li class="m-sub-item"><a href="create-club.php"  class="m-link">Create club</a></li>
                                             </ul>
                                             
                                         </li>
                                         <li class="m-item"><a href="shop.php" class="m-link">Shop</a></li>
                                         <li class="m-item"><a href="about.html" class="m-link">About</a></li>
-                                        <li class="m-item"><a href="" class="m-link">clubs</a>
-                                            <ul class="sub-menu sub-menu-user sub-menu-block">
-                                                 <li class="m-sub-item"><a href="joinclub.php" class="m-link">Join a club</a></li>
-                                                <li class="m-sub-item"><a href="myclubs.php"  class="m-link">My clubs</a></li>
-                                                <li class="m-sub-item"><a href="create-club.php"  class="m-link">Create club</a></li>
-                                            </ul>
-                                            
-                                        </li>
                                         
                                         <li class="m-item"><a href="getstarted.html" class="mtr-button btn-white">
-                                            <?php if (isset($_SESSION['username'])) : ?>
-                                                    <h3><?php echo $_SESSION['username']; ?></h3>
-                                                <?php endif ?>
+                                        	<?php if (isset($_SESSION['username'])) : ?>
+                									<h3><?php echo $_SESSION['username']; ?></h3>
+              									<?php endif ?>
                                         </a></li>
                                         <li class="m-item text-center hidden-md hidden-lg">
                                             <h4 class="mb-title">The best website<br />for organizing your book club</h4><a href="signup.html" class="btn btn-default-corner bg-transparent btn-create-club">Create a club</a>
@@ -81,33 +85,41 @@ session_start();
                         </div>
                     </nav>
                 </header>
-                <main class="main-container" id="content">
-                    <div class="club-container create-club-container">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="center">
-                                    <div class="create-club-content">
-                                        <div class="create-club"><img class="image" src="static/media/create-club.7647949c.png" alt="Create club" arial-label="Create club" width="183" height="75" />
-                                            <h1 class="title">Lets create your club</h1>
-                                            <?php include('errors.php'); ?>
-                                            <form class="main-form" novalidate="" method="POST" action="club_create.php">
-                                                <div class="form-group undefined"><input type="text" maxLength="75" id="clubname" aria-label="Club name" name="clubname" value="" placeholder="Club name" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-                                                <div class="form-group undefined"><input type="text" maxLength="75" id="cstate" aria-label="State/County" name="cstate" value="" placeholder="State/County" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-                                                <div class="form-group undefined"><input type="text" maxLength="75" id="ccity" aria-label="City/Town" name="ccity" value="" placeholder="City/Town" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-                                                <div class="form-group undefined"><input type="text" maxLength="75" id="ctype" aria-label="type" name="ctype" value="" placeholder="Type" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-                                                <center class="form-group button-group"><button name="create" type="submit" class="mtr-button">
-                                                        <!-- -->Create My Club
-                                                    </button></center>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
+                    <main class="main-container" id="content">
+                        <div class="home-container">
+                            <div class="container-fluid">
+                                <br>
+                                <h1 class="title-form">My Clubs</h1>
+                                    
+                                    <table class="table" style="margin-top: 20px">
+                                        <tr>
+                                            <th>Club</th>
+                                            <th>State</th>
+                                            <th>City</th>
+                                            <th>Type</th>
+                                            <th>&nbsp;</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                        <?php while($row = mysqli_fetch_assoc($result)){ ?>
+                                        <tr>
+                                            <td><?php echo $row['clubname']; ?></td>
+                                            <td><?php echo $row['cstate']; ?></td>
+                                            <td><?php echo $row['ccity']; ?></td>
+                                            <td><?php echo $row['ctype']; ?></td>
+                                            <td><a href="admin-dashboard.php?clubname=<?php echo $row['clubname']; ?>">Jump In</a></td>
+                                            <?php if ($row['member_type']==2) { ?>
+                                                    
+                                                
+                                            <td><a href="club_leave.php?clubname=<?php echo $row['clubname']; ?>">Leave</a></td>
+                                            <?php } ?>
+                                        </tr>
+                                        <?php } ?>
+                                    </table>
+                                    
                             </div>
                         </div>
-                    </div>
-                </main>
-                 <footer class="footer-container">
+                    </main>
+                    <footer class="footer-container">
                         <div class="footer-top"><a href="/" class="logo-footer" aria-label="Link to BookClubz&#x27;s Homepage"><img width="203" height="26" class="img-responsive" src="static/media/logo.png" alt="" /></a></div>
                         <div class="footer-middle">
                             <div class="footer-nav">
@@ -118,7 +130,7 @@ session_start();
                                 </div>
                                 <div class="footer-nav-item">
                                     <h3 class="nav-title">Community</h3>
-                                    <p class="nav-item"><a class="nav-link" href="">Join a Book Club</a></p>
+                                    <p class="nav-item"><a class="nav-link" href="signin.php">Join a Book Club</a></p>
                                 </div>
                                 <div class="footer-nav-item">
                                     <h3 class="nav-title">Support</h3>
@@ -154,6 +166,7 @@ session_start();
                             </div>
                         </div>
                     </footer>
+                </div>
             </div>
             <div class="Toastify"></div>
         </div>
@@ -178,13 +191,32 @@ session_start();
 
 
 
-    <img src="https://www.shareasale.com/sale.cfm?tracking=5955467&amount=0.00&merchantID=109298&transtype=lead" style="opacity: 0; visibility: hidden; position: absolute;" width="1" height="1">
+    <img src="https://www.shareasale.com/sale.cfm?tracking=5955298&amount=0.00&merchantID=109298&transtype=lead" style="opacity: 0; visibility: hidden; position: absolute;" width="1" height="1">
 
 
 
 
     <!-- Script Tags-->
-   
+    <script id="__LOADABLE_REQUIRED_CHUNKS__" type="application/json">
+        [108, 0, 7, 1, 2, 66, 69, 133, 107]
+    </script>
+    <script id="__LOADABLE_REQUIRED_CHUNKS___ext" type="application/json">
+        {
+            "namedChunks": ["react-smartbanner", "HomePage-jsx", "ImageItem", "react-slick"]
+        }
+    </script>
+    <script async data-chunk="main" src="static/js/runtime.b09c94d6.js"></script>
+    <script async data-chunk="main" src="static/js/vendors~main.e913675b.chunk.js"></script>
+    <script async data-chunk="main" src="static/js/main.90b7755d.chunk.js"></script>
+    <script async data-chunk="react-smartbanner" src="static/js/react-smartbanner.b9ccb7cf.chunk.js"></script>
+    <script async data-chunk="HomePage-jsx" src="static/js/vendors~AboutOurClubPage-jsx~AboutPage-jsx~AdminDashboardPage-jsx~BlogDetailPage-jsx~BlogsByCategory~5112d84f.5bd938ae.chunk.js"></script>
+    <script async data-chunk="HomePage-jsx" src="static/js/vendors~BookDetailPage-jsx~DetailJoinABookClubPage-jsx~HomePage-jsx~HomePageB-jsx~JoinABookClubByCat~75caafd6.d74d6503.chunk.js"></script>
+    <script async data-chunk="HomePage-jsx" src="static/js/AboutOurClubPage-jsx~AboutPage-jsx~AdminDashboardPage-jsx~BlogDetailPage-jsx~BlogsByCategoryPage-jsx~19d20ad4.3519e182.chunk.js"></script>
+    <script async data-chunk="HomePage-jsx" src="static/js/AboutPage-jsx~BlogDetailPage-jsx~BlogsByCategoryPage-jsx~BlogsPage-jsx~BookDetailPage-jsx~BookOfTheM~eb2311c5.4e407db1.chunk.js"></script>
+    <script async data-chunk="HomePage-jsx" src="static/js/HomePage-jsx.1f070337.chunk.js"></script>
+    <script async data-chunk="ImageItem" src="static/js/ImageItem.dee7c36c.chunk.js"></script>
+    <script async data-chunk="react-slick" src="static/js/vendors~react-slick.fd36e0ac.chunk.js"></script>
+    <script async data-chunk="react-slick" src="static/js/react-slick.2e0a7ab9.chunk.js"></script>
     <!-- End Script Tags -->
 
     <script type="text/javascript">
@@ -230,19 +262,31 @@ session_start();
 
 
 
-
     <script type="text/javascript">
-        if (typeof mixpanel !== 'undefined') {
-            mixpanel.identify("195998");
-            mixpanel.people.set({
-                "$name": "",
+        if (window.location.pathname === '/') {
+            mixpanel.track('screen_view', {
+                'screen_name': 'Home page',
+                'user_type': 'anonymous'
+            });
+            gtag('event', 'screen_view', {
+                'screen_name': 'Home page',
+                'user_type': 'anonymous'
+            });
+            fbq('track', 'PageView', {
+                'content_name': 'Home page'
             });
         }
-        if (typeof Sentry !== 'undefined') {
-            Sentry.configureScope(function(scope) {
-                scope.setUser({
-                    "id": "195998"
-                })
+        if (window.location.pathname === '/signup') {
+            mixpanel.track('screen_view', {
+                'screen_name': 'Signup page',
+                'user_type': 'anonymous'
+            });
+            gtag('event', 'screen_view', {
+                'screen_name': 'Signup page',
+                'user_type': 'anonymous'
+            });
+            fbq('track', 'PageView', {
+                'content_name': 'Signup page'
             });
         }
     </script>
@@ -252,3 +296,6 @@ session_start();
 </body>
 
 </html>
+ <?php
+
+?>

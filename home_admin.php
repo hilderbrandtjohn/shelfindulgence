@@ -44,6 +44,7 @@ session_start();
                                 <div aria-hidden="false" tabindex="-1" class="nav-container ">
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
+                                        <li class="m-item"><a href="admin_manage.php" class="m-link">Admin</a></li>
                                         <li class="m-item" ><a href="" class="m-link">Resources</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                 <li class="m-sub-item"><a href="https://www.goodreads.com/" target="_blank" class="m-link">Good Reads</a></li>

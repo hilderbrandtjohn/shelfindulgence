@@ -41,8 +41,8 @@ $sql_query ="CREATE TABLE IF NOT EXISTS User(
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
 	email varchar(225) NOT NULL,
 	username varchar(225) UNIQUE NOT NULL,
-    state varchar(225) UNIQUE NOT NULL,
-    city varchar(225) UNIQUE NOT NULL,
+    state varchar(225)  NOT NULL,
+    city varchar(225)  NOT NULL,
 	password varchar(225) NOT NULL)";
 
 //Checking if connection is succesful
@@ -64,7 +64,7 @@ if (!mysqli_query($connection, $sql_query)) {
     echo "Error in creating table : " .mysqli_error($connection);
 }	
 
-//REGISTERING A USER
+//REGISTERING A CLUB
 if (isset($_POST['create'])) {
 	//getting input from user and performing query sanitisation on it
 	$clubname= mysqli_real_escape_string($connection, $_POST['clubname']);
@@ -100,7 +100,7 @@ if (isset($_POST['create'])) {
 
     	//track logged in users using sessions NB:include session_start at the top of the file
     	$_SESSION['username'] =$username;
-    	$_SESSION['clubname'] =$clubname;
+    	
     	header('location: admin-dashboard.php');
 
     }
@@ -122,6 +122,20 @@ if (isset($_POST['signin'])) {
     }
 
 if (count($errors) == 0) {
+    $uname="admin";
+    $password = md5($password);
+    $select_query ="SELECT * FROM User WHERE username='$uname' AND password='$password'";
+    $results =mysqli_query($connection,$select_query);
+    if (mysqli_num_rows($results) ==1) {
+        //track logged in users using sessions NB:include session_start at the top of the file
+        $_SESSION['username'] =$username;
+        header('location: home_admin.php');
+    }else {
+        array_push($errors, "Wrong username or password");
+    }
+  }
+
+if (count($errors) == 0) {
     $password = md5($password);
     $select_query ="SELECT * FROM User WHERE username='$username' AND password='$password'";
     $results =mysqli_query($connection,$select_query);
@@ -137,7 +151,7 @@ if (count($errors) == 0) {
 
 }
 
-//REGISTERING A CLUB
+//REGISTERING A USER
 if (isset($_POST['register'])) {
     //getting input from user and performing query sanitisation on it
     $email= mysqli_real_escape_string($connection, $_POST['email']);
@@ -182,7 +196,7 @@ if (isset($_POST['register'])) {
 
         //track logged in users using sessions NB:include session_start at the top of the file
         $_SESSION['username'] =$username;
-        $_SESSION['success'] ="You are now logged in";
+        
         header('location: home.php');
 
     }

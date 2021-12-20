@@ -32,7 +32,7 @@
                 <header class="header-container">
                     <nav class="navbar">
                         <div class="navbar-header">
-                            <div class="navbar-brand logo"><a href="/" aria-label="Link to Shelf Indulgence&#x27;s Homepage"><img width="233" height="30" src="static/media/logo.png" class="img-responsive" alt="" /></a></div>
+                            <div class="navbar-brand logo"><a href="home.php" aria-label="Link to Shelf Indulgence&#x27;s Homepage"><img width="233" height="30" src="static/media/logo.png" class="img-responsive" alt="" /></a></div>
                         </div>
                         <div class="skip-to-content"><a href="#content">Skip to content</a></div>
                         <div class="navbar-collapse">
@@ -41,15 +41,6 @@
                                 <div aria-hidden="false" tabindex="-1" class="nav-container ">
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
-                                        <li class="m-item"><a href="books.html" class="m-link"> Books <span class="ficon ficon-arrow-down-medium" aria-hidden="true"></span></a>
-                                            <ul class="sub-menu sub-menu-user sub-menu-book">
-                                                <li class="m-sub-item"><a href="/most-popular-books/10/2021" class="m-link">Top books</a></li>
-                                                <li class="m-sub-item"><a href="/indie-author-corner" class="m-link">author 1 corner</a></li>
-                                                <li class="m-sub-item"><a href="/hear-our-voices-bookclub" class="m-link">(bookclubname) book club</a></li>
-                                                <li class="m-sub-item"><a href="/girlhood-around-the-world" class="m-link">bookclubname</a></li>
-                                                
-                                            </ul>
-                                        </li>
                                         <li class="m-item" ><a href="" class="m-link">Resources <span class="ficon ficon-arrow-down-medium" aria-hidden="true"></span></a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                 <li class="m-sub-item"><a href="https://www.goodreads.com/" target="_blank" class="m-link">Good Reads</a></li>

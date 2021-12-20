@@ -1,35 +1,64 @@
-<?php 
-session_start();
+<?php
+    session_start();
+    
+    $title = "Edit profile";
+    
+    require_once "./functions/database_functions.php";
+    $conn = db_connect();
 
+    if(isset($_GET['username'])){
+        $username = $_GET['username'];
+    } else {
+        echo "Empty query!";
+        exit;
+    }
+
+    if(!isset($username)){
+        echo "Empty username! check again!";
+        exit;
+    }
+
+    // get user data
+    $query = "SELECT username, email, state, city FROM user WHERE username = '$username'";
+    $result = mysqli_query($conn, $query);
+    if(!$result){
+        echo "Can't retrieve data " . mysqli_error($conn);
+        exit;
+    }
+    $row = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Create a book club</title>
-    <meta name="description" content="Shelfindulgence makes organizing a book club simple. Create clubs, schedule meetings, and choose books, all for free." />
+    
+    <title>Shelf indulgence</title>
+    <meta name="description" content="Shelf indulgence makes organizing a book club simple. Create clubs, schedule meetings, and choose books, all for free." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="cleartype" content="on" />
     <meta name="theme-color" content="#ffffff">
-
+    
     <!-- Font tags-->
-   
+    <link rel="preload" as="font" href="static/media/bookclubz.71358ad4.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="static/media/glyphicons-halflings-regular.448c34a5.woff2" type="font/woff2" crossorigin="anonymous">
     <!-- End Font tags -->
 
     <!-- Style Tags-->
     <link rel="stylesheet" href="static/css/vendors~main.css">
     <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/vendors~AboutOurClubPage.css">
-    <link rel="stylesheet" href="static/css/CreateClubPage.css">
+    <link rel="stylesheet" href="static/css/AboutPage.css">
+    <link  rel="stylesheet" href="static/css/SigninPage.css">
+    <link rel="stylesheet" href="static/css/vendors~react-slick.css">
     <!-- End Style Tags -->
+
+    
 </head>
 
 <body class="intent-mouse">
     <div id="root">
         <div>
-            <div></div>
-            <div class="wrapper-container undefined">
-                <header class="header-container">
+            <div class="bg-homepage-fix homepage-container">
+                <div class="wrapper-container undefined">
+                    <header class="header-container">
                     <nav class="navbar">
                         <div class="navbar-header">
                             <div class="navbar-brand logo"><a href="home.php" aria-label="Link to Shelf Indulgence&#x27;s Homepage"><img width="233" height="30" src="static/media/logo.png" class="img-responsive" alt="" /></a></div>
@@ -41,7 +70,7 @@ session_start();
                                 <div aria-hidden="false" tabindex="-1" class="nav-container ">
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
-                                        <li class="m-item" ><a href="" class="m-link">Resources <span class="ficon ficon-arrow-down-medium" aria-hidden="true"></span></a>
+                                        <li class="m-item" ><a href="" class="m-link">Resources</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                 <li class="m-sub-item"><a href="https://www.goodreads.com/" target="_blank" class="m-link">Good Reads</a></li>
                                                 <li class="m-sub-item"><a href="https://www.librarything.com/" target="_blank" class="m-link">Library Thing</a></li>
@@ -53,21 +82,14 @@ session_start();
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                  <li class="m-sub-item"><a href="joinclub.php" class="m-link">Join a club</a></li>
                                                 <li class="m-sub-item"><a href="myclubs.php"  class="m-link">My clubs</a></li>
+                                                <li class="m-sub-item"><a href="create-club.php"  class="m-link">Create club</a></li>
                                             </ul>
                                             
                                         </li>
                                         <li class="m-item"><a href="shop.php" class="m-link">Shop</a></li>
                                         <li class="m-item"><a href="about.html" class="m-link">About</a></li>
-                                        <li class="m-item"><a href="" class="m-link">clubs</a>
-                                            <ul class="sub-menu sub-menu-user sub-menu-block">
-                                                 <li class="m-sub-item"><a href="joinclub.php" class="m-link">Join a club</a></li>
-                                                <li class="m-sub-item"><a href="myclubs.php"  class="m-link">My clubs</a></li>
-                                                <li class="m-sub-item"><a href="create-club.php"  class="m-link">Create club</a></li>
-                                            </ul>
-                                            
-                                        </li>
                                         
-                                        <li class="m-item"><a href="getstarted.html" class="mtr-button btn-white">
+                                        <li class="m-item"><a href="#" class="mtr-button btn-white">
                                             <?php if (isset($_SESSION['username'])) : ?>
                                                     <h3><?php echo $_SESSION['username']; ?></h3>
                                                 <?php endif ?>
@@ -81,33 +103,40 @@ session_start();
                         </div>
                     </nav>
                 </header>
-                <main class="main-container" id="content">
-                    <div class="club-container create-club-container">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="center">
-                                    <div class="create-club-content">
-                                        <div class="create-club"><img class="image" src="static/media/create-club.7647949c.png" alt="Create club" arial-label="Create club" width="183" height="75" />
-                                            <h1 class="title">Lets create your club</h1>
-                                            <?php include('errors.php'); ?>
-                                            <form class="main-form" novalidate="" method="POST" action="club_create.php">
-                                                <div class="form-group undefined"><input type="text" maxLength="75" id="clubname" aria-label="Club name" name="clubname" value="" placeholder="Club name" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-                                                <div class="form-group undefined"><input type="text" maxLength="75" id="cstate" aria-label="State/County" name="cstate" value="" placeholder="State/County" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-                                                <div class="form-group undefined"><input type="text" maxLength="75" id="ccity" aria-label="City/Town" name="ccity" value="" placeholder="City/Town" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-                                                <div class="form-group undefined"><input type="text" maxLength="75" id="ctype" aria-label="type" name="ctype" value="" placeholder="Type" class="form-control" /><span role="alert" class="notification-message error"></span></div>
-                                                <center class="form-group button-group"><button name="create" type="submit" class="mtr-button">
-                                                        <!-- -->Create My Club
-                                                    </button></center>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
+                    <main class="main-container" id="content">
+                    <div class="signin-container">
+                        <div class="left-container">
+                            <form method="post" action="user_edit.php" enctype="multipart/form-data">
+                                    <table class="table">
+                                        <tr>
+                                            <th>Username</th>
+                                            <td><input type="text" name="username" value="<?php echo $row['username'];?>" readOnly="true"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Email</th>
+                                            <td><input type="text" name="email" value="<?php echo $row['email'];?>" required></td>
+                                        </tr>
+                                        <tr>
+                                            <th>State/County</th>
+                                            <td><input type="text" name="state" value="<?php echo $row['state'];?>" required></td>
+                                        </tr>
+                                        <tr>
+                                            <th>City/Town</th>
+                                            <td><input type="text" name="city" value="<?php echo $row['city'];?>" required></td>
+                                        </tr>
+                                        
+                                    </table>
+                                    <input type="submit" name="save_change" value="Change" class="btn btn-primary">
+                                    <input type="reset" value="cancel" class="btn btn-default">
+                                </form>
+                                <br/>
+                                <a href="profile.php" class="btn btn-success">Confirm</a>
+
                         </div>
+                        <div class="right-container" style="background-image:url(static/media/bg-sign.jpg)"></div>
                     </div>
                 </main>
-                 <footer class="footer-container">
+                    <footer class="footer-container">
                         <div class="footer-top"><a href="/" class="logo-footer" aria-label="Link to BookClubz&#x27;s Homepage"><img width="203" height="26" class="img-responsive" src="static/media/logo.png" alt="" /></a></div>
                         <div class="footer-middle">
                             <div class="footer-nav">
@@ -118,7 +147,7 @@ session_start();
                                 </div>
                                 <div class="footer-nav-item">
                                     <h3 class="nav-title">Community</h3>
-                                    <p class="nav-item"><a class="nav-link" href="">Join a Book Club</a></p>
+                                    <p class="nav-item"><a class="nav-link" href="signin.php">Join a Book Club</a></p>
                                 </div>
                                 <div class="footer-nav-item">
                                     <h3 class="nav-title">Support</h3>
@@ -154,6 +183,7 @@ session_start();
                             </div>
                         </div>
                     </footer>
+                </div>
             </div>
             <div class="Toastify"></div>
         </div>
@@ -178,13 +208,32 @@ session_start();
 
 
 
-    <img src="https://www.shareasale.com/sale.cfm?tracking=5955467&amount=0.00&merchantID=109298&transtype=lead" style="opacity: 0; visibility: hidden; position: absolute;" width="1" height="1">
+    <img src="https://www.shareasale.com/sale.cfm?tracking=5955298&amount=0.00&merchantID=109298&transtype=lead" style="opacity: 0; visibility: hidden; position: absolute;" width="1" height="1">
 
 
 
 
     <!-- Script Tags-->
-   
+    <script id="__LOADABLE_REQUIRED_CHUNKS__" type="application/json">
+        [108, 0, 7, 1, 2, 66, 69, 133, 107]
+    </script>
+    <script id="__LOADABLE_REQUIRED_CHUNKS___ext" type="application/json">
+        {
+            "namedChunks": ["react-smartbanner", "HomePage-jsx", "ImageItem", "react-slick"]
+        }
+    </script>
+    <script async data-chunk="main" src="static/js/runtime.b09c94d6.js"></script>
+    <script async data-chunk="main" src="static/js/vendors~main.e913675b.chunk.js"></script>
+    <script async data-chunk="main" src="static/js/main.90b7755d.chunk.js"></script>
+    <script async data-chunk="react-smartbanner" src="static/js/react-smartbanner.b9ccb7cf.chunk.js"></script>
+    <script async data-chunk="HomePage-jsx" src="static/js/vendors~AboutOurClubPage-jsx~AboutPage-jsx~AdminDashboardPage-jsx~BlogDetailPage-jsx~BlogsByCategory~5112d84f.5bd938ae.chunk.js"></script>
+    <script async data-chunk="HomePage-jsx" src="static/js/vendors~BookDetailPage-jsx~DetailJoinABookClubPage-jsx~HomePage-jsx~HomePageB-jsx~JoinABookClubByCat~75caafd6.d74d6503.chunk.js"></script>
+    <script async data-chunk="HomePage-jsx" src="static/js/AboutOurClubPage-jsx~AboutPage-jsx~AdminDashboardPage-jsx~BlogDetailPage-jsx~BlogsByCategoryPage-jsx~19d20ad4.3519e182.chunk.js"></script>
+    <script async data-chunk="HomePage-jsx" src="static/js/AboutPage-jsx~BlogDetailPage-jsx~BlogsByCategoryPage-jsx~BlogsPage-jsx~BookDetailPage-jsx~BookOfTheM~eb2311c5.4e407db1.chunk.js"></script>
+    <script async data-chunk="HomePage-jsx" src="static/js/HomePage-jsx.1f070337.chunk.js"></script>
+    <script async data-chunk="ImageItem" src="static/js/ImageItem.dee7c36c.chunk.js"></script>
+    <script async data-chunk="react-slick" src="static/js/vendors~react-slick.fd36e0ac.chunk.js"></script>
+    <script async data-chunk="react-slick" src="static/js/react-slick.2e0a7ab9.chunk.js"></script>
     <!-- End Script Tags -->
 
     <script type="text/javascript">
@@ -230,19 +279,31 @@ session_start();
 
 
 
-
     <script type="text/javascript">
-        if (typeof mixpanel !== 'undefined') {
-            mixpanel.identify("195998");
-            mixpanel.people.set({
-                "$name": "",
+        if (window.location.pathname === '/') {
+            mixpanel.track('screen_view', {
+                'screen_name': 'Home page',
+                'user_type': 'anonymous'
+            });
+            gtag('event', 'screen_view', {
+                'screen_name': 'Home page',
+                'user_type': 'anonymous'
+            });
+            fbq('track', 'PageView', {
+                'content_name': 'Home page'
             });
         }
-        if (typeof Sentry !== 'undefined') {
-            Sentry.configureScope(function(scope) {
-                scope.setUser({
-                    "id": "195998"
-                })
+        if (window.location.pathname === '/signup') {
+            mixpanel.track('screen_view', {
+                'screen_name': 'Signup page',
+                'user_type': 'anonymous'
+            });
+            gtag('event', 'screen_view', {
+                'screen_name': 'Signup page',
+                'user_type': 'anonymous'
+            });
+            fbq('track', 'PageView', {
+                'content_name': 'Signup page'
             });
         }
     </script>
@@ -252,3 +313,6 @@ session_start();
 </body>
 
 </html>
+ <?php
+
+?>
