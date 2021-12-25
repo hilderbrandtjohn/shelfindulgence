@@ -21,10 +21,18 @@ $conn = db_connect();
     <link rel="stylesheet" href="static/css/vendors~main.css">
     <link rel="stylesheet" href="static/css/main.css">
     <link rel="stylesheet" href="static/css/MessagePage.css">
-    <link rel="stylesheet" href="static/css/InvitationLink.css">
-   
-    <link href="static/css/style3.css" rel="stylesheet" type="text/css">
     <!-- End Style Tags -->
+    <style type="text/css">
+        .uname{
+            color:#009;
+            font-size:14px;
+            font-weight:bold;
+        }
+        .msg{
+            color:#F00;
+            font-size:14px;
+        }
+    </style>
 </head>
 
 <body class="intent-mouse">
@@ -44,7 +52,7 @@ $conn = db_connect();
                                 <div aria-hidden="false" tabindex="-1" class="nav-container ">
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
-                                        <li class="m-item" ><a href="" class="m-link">Resources <span class="ficon ficon-arrow-down-medium" aria-hidden="true"></span></a>
+                                        <li class="m-item" ><a href="" class="m-link">Resources</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                 <li class="m-sub-item"><a href="https://www.goodreads.com/" target="_blank" class="m-link">Good Reads</a></li>
                                                 <li class="m-sub-item"><a href="https://www.librarything.com/" target="_blank" class="m-link">Library Thing</a></li>
@@ -60,17 +68,14 @@ $conn = db_connect();
                                             </ul>
                                             
                                         </li>
-                                        <li class="m-item"><a href="signin.php" class="m-link">Shop</a></li>
-                                        <li class="m-item"><a href="about.html" class="m-link">About</a></li>
+                                        <li class="m-item"><a href="shop.php" class="m-link">Shop</a></li>
+                                        <li class="m-item"><a href="about.php" class="m-link">About</a></li>
                                         
-                                        <li class="m-item"><a href="getstarted.html" class="mtr-button btn-white">
+                                        <li class="m-item"><a href="profile.php" class="mtr-button btn-white">
                                             <?php if (isset($_SESSION['username'])) : ?>
                                                     <h3><?php echo $_SESSION['username']; ?></h3>
                                                 <?php endif ?>
                                         </a></li>
-                                        <li class="m-item text-center hidden-md hidden-lg">
-                                            <h4 class="mb-title">The best website<br />for organizing your book club</h4><a href="signup.html" class="btn btn-default-corner bg-transparent btn-create-club">Create a club</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -87,13 +92,13 @@ $conn = db_connect();
                                             <div class="avatar-content">
                                                 
                                                 <div class="club-info">
-                                                    <div>
-                                                        <h3><?php echo $clubname; ?></h3>
+                                                    <div style="text-transform: capitalize;font-weight: bold;font-style: oblique;font-size: 24px;font-family: bradler hand itc;">
+                                                        <?php echo $clubname; ?>
                                                     </div>
-                                                    <div>
+                                                    <div style="text-transform: capitalize;font-style: oblique;font-size: 20px;font-family: bradler hand itc;">
                                                         <br>
-                                                        <br>
-                                                        <h3>Welcome  <?php echo $username; ?></h3>
+                                            
+                                                        Welcome  <?php echo $username; ?>
                                                     </div>
                                                 </div>
                                                 <div class="clearfix"></div>

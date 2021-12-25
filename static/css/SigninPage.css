@@ -108,27 +108,6 @@
     border-bottom: 1px solid #4a4645
 }
 
-.signin-container .left-container .btn-create-new-club {
-    position: absolute;
-    bottom: 45px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    width: calc(100% - 100px)
-}
-
-@media only screen and (max-width:600px) {
-    .signin-container .left-container .btn-create-new-club {
-        width: calc(100% - 60px)
-    }
-}
-
-@media only screen and (max-width:500px) {
-    .signin-container .left-container .btn-create-new-club {
-        width: calc(100% - 30px)
-    }
-}
 
 @media only screen and (max-width:768px) {
     .signin-container .left-container {

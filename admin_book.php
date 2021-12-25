@@ -20,17 +20,12 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- Font tags-->
-    <link rel="preload" as="font" href="static/media/bookclubz.71358ad4.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="static/media/glyphicons-halflings-regular.448c34a5.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="static/media/glyphicons-halflings-regular.woff2" type="font/woff2" crossorigin="anonymous">
     <!-- End Font tags -->
 
     <!-- Style Tags-->
-    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/vendors~main.css">
     <link rel="stylesheet" href="./static/css/main.css">
-    <link rel="stylesheet" href="./static/css/AboutPage.css">
-    <link rel="stylesheet" href="./static/css/vendors~react-slick.css">
     <link rel="stylesheet" href="./static/css/HomePage.css">
 
     <!-- End Style Tags -->
@@ -48,7 +43,6 @@
                         <div class="navbar-header">
                             <div class="navbar-brand logo"><a href="home.php" aria-label="Link to Shelf Indulgence&#x27;s Homepage"><img width="233" height="30" src="static/media/logo.png" class="img-responsive" alt="" /></a></div>
                         </div>
-                        <div class="skip-to-content"><a href="#content">Skip to content</a></div>
                         <div class="navbar-collapse">
                             <div class="nav-wrapper">
                                 <div class="header-group-button"><button id="bt-open-menu" type="button" aria-label="Open menu" class="btn btn-open-menu lines-button x "><span class="lines"></span></button></div><a href="signin.php" class="btn-signin-rw ">Sign in</a>
@@ -56,7 +50,7 @@
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
                                         
-                                        <li class="m-item" ><a href="" class="m-link">Resources <span class="ficon ficon-arrow-down-medium" aria-hidden="true"></span></a>
+                                        <li class="m-item" ><a href="" class="m-link">Resources</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                 <li class="m-sub-item"><a href="https://www.goodreads.com/" target="_blank" class="m-link">Good Reads</a></li>
                                                 <li class="m-sub-item"><a href="https://www.librarything.com/" target="_blank" class="m-link">Library Thing</a></li>
@@ -64,9 +58,8 @@
                                                 <li class="m-sub-item"><a href="https://www.libgen.is/" target="_blank" class="m-link">Library Genesis</a></li>
                                             </ul>
                                         </li>
-                                        <li class="m-item"><a href="admin.php" class="m-link">Sell</a></li>
-                                        <li class="m-item"><a href="books.php" class="m-link"><span class="glyphicon glyphicon-book"></span>&nbsp; Books</a></li>
-                                        <li class="m-item"><a href="contact.php" class="m-link">about</a></li>
+                                        <li class="m-item"><a href="books.php" class="m-link">All Books</a></li>
+                                        <li class="m-item"><a href="about.php" class="m-link">about</a></li>
                                         <li class="m-item"><a href="" class="m-link">clubs</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                  <li class="m-sub-item"><a href="joinclub.php" class="m-link">Join a club</a></li>
@@ -75,7 +68,6 @@
                                             </ul>
                                             
                                         </li>
-                                        <li class="m-item"><a href="admin_book.php" class="m-link"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Sell</a></li>
                                          <li class="m-item"><a href="profile.php" class="mtr-button btn-white">
                                             <?php if (isset($_SESSION['username'])) : ?>
                                                     <h3><?php echo $_SESSION['username']; ?></h3>
@@ -176,9 +168,6 @@
             <div class="Toastify"></div>
         </div>
     </div>
-
-<script type="text/javascript" src="./bootstrap/js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

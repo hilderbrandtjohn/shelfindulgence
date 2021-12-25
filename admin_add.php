@@ -37,7 +37,7 @@
         if(isset($_FILES['image']) && $_FILES['image']['name'] != ""){
             $image = $_FILES['image']['name'];
             $directory_self = str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['PHP_SELF']);
-            $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . $directory_self . "bootstrap/img/";
+            $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . $directory_self . "static/media";
             $uploadDirectory .= $image;
             move_uploaded_file($_FILES['image']['tmp_name'], $uploadDirectory);
         }
@@ -65,17 +65,13 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- Font tags-->
-    <link rel="preload" as="font" href="static/media/bookclubz.71358ad4.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="static/media/glyphicons-halflings-regular.448c34a5.woff2" type="font/woff2" crossorigin="anonymous">
+    
+    <link rel="preload" as="font" href="static/media/glyphicons-halflings-regular.woff2" type="font/woff2" crossorigin="anonymous">
     <!-- End Font tags -->
 
     <!-- Style Tags-->
-    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/vendors~main.css">
     <link rel="stylesheet" href="./static/css/main.css">
-    <link rel="stylesheet" href="./static/css/AboutPage.css">
-    <link rel="stylesheet" href="./static/css/vendors~react-slick.css">
     <link rel="stylesheet" href="./static/css/HomePage.css">
 
     <!-- End Style Tags -->
@@ -101,7 +97,7 @@
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
                                         
-                                        <li class="m-item" ><a href="" class="m-link">Resources <span class="ficon ficon-arrow-down-medium" aria-hidden="true"></span></a>
+                                        <li class="m-item" ><a href="" class="m-link">Resources</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                 <li class="m-sub-item"><a href="https://www.goodreads.com/" target="_blank" class="m-link">Good Reads</a></li>
                                                 <li class="m-sub-item"><a href="https://www.librarything.com/" target="_blank" class="m-link">Library Thing</a></li>
@@ -110,8 +106,8 @@
                                             </ul>
                                         </li>
                                         
-                                        <li class="m-item"><a href="books.php" class="m-link"><span class="glyphicon glyphicon-book"></span>&nbsp; Books</a></li>
-                                        <li class="m-item"><a href="about.html" class="m-link">about</a></li>
+                                        <li class="m-item"><a href="books.php" class="m-link">All Books</a></li>
+                                        <li class="m-item"><a href="about.php" class="m-link">about</a></li>
                                         <li class="m-item"><a href="" class="m-link">clubs</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                  <li class="m-sub-item"><a href="joinclub.php" class="m-link">Join a club</a></li>
@@ -120,8 +116,8 @@
                                             </ul>
                                             
                                         </li>
-                                        <li class="m-item"><a href="admin_book.php" class="m-link"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Sell</a></li>
-                                         <li class="m-item"><a href="getstarted.html" class="mtr-button btn-white">
+                                    
+                                         <li class="m-item"><a href="profile.php" class="mtr-button btn-white">
                                             <?php if (isset($_SESSION['username'])) : ?>
                                                     <h3><?php echo $_SESSION['username']; ?></h3>
                                                 <?php endif ?>
@@ -138,37 +134,50 @@
                                 <form method="post" action="admin_add.php" enctype="multipart/form-data">
                                     <table class="table">
                                         <tr>
-                                            <th>ISBN</th>
-                                            <td><input type="text" name="isbn"></td>
+                                            
+                                            <td>
+                                                <input style="width: 300px;  " type="text" maxLength="255"  aria-label="ISBN" name="isbn" aria-required="true" value="" placeholder="ISBN" class="form-control" />
+
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <th>Title</th>
-                                            <td><input type="text" name="title" required></td>
+                                            
+                                            <td>
+                                                <input style="width: 300px;  " type="text" maxLength="255"  aria-label="title" name="title" aria-required="true" value="" placeholder="title" class="form-control" />
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <th>Author</th>
-                                            <td><input type="text" name="author" required></td>
+                                            
+                                            <td>
+                                                <input style="width: 300px;  " type="text" maxLength="255"  aria-label="author" name="author" aria-required="true" value="" placeholder="author" class="form-control" required />
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <th>Image</th>
-                                            <td><input type="file" name="image"></td>
+                                            
+                                            <td>Image <input type="file" name="image" ></td>
                                         </tr>
                                         <tr>
-                                            <th>Description</th>
-                                            <td><textarea name="descr" cols="40" rows="5"></textarea></td>
+                                            
+                                            <td><textarea style="border-radius: 5px; " placeholder="Description" name="descr" cols="40" rows="5"></textarea></td>
                                         </tr>
                                         <tr>
-                                            <th>Price</th>
-                                            <td><input type="text" name="price" required></td>
+                                            
+                                            <td>
+                                                <input style="width: 300px;  " type="text" maxLength="255"  aria-label="price" name="price" aria-required="true" value="" placeholder="Price" class="form-control" required />
+                                            </td>
                                         </tr>
                                         
                                         <tr>
-                                            <th>Seller Name</th>
-                                            <td><input type="text" name="sname" required></td>
+                                            
+                                            <td>
+                                                <input style="width: 300px;  " type="text" maxLength="255"  aria-label="seller name" name="sname" aria-required="true" value="" placeholder="seller name" class="form-control" required />
+                                            </td>
                                         </tr>
                                         <tr>
-                                            <th>Seller Contact</th>
-                                            <td><input type="text" name="scontact" required></td>
+                                            
+                                            <td>
+                                                <input style="width: 300px;  " type="text" maxLength="255"  aria-label="seller contact" name="scontact" aria-required="true" value="" placeholder="seller contact" class="form-control" required/>
+                                            </td>
                                         </tr>
                                     </table>
                                     <input type="submit" name="add" value="Add new book" class="btn btn-primary">

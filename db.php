@@ -62,7 +62,77 @@ $sql_query ="CREATE TABLE IF NOT EXISTS Club(
 
 if (!mysqli_query($connection, $sql_query)) {
     echo "Error in creating table : " .mysqli_error($connection);
-}	
+}
+//Creating members table
+
+$sql_query ="CREATE TABLE IF NOT EXISTS members(
+    username varchar(225)  NOT NULL ,
+    clubname varchar(75)  NOT NULL,
+    cstate varchar(75)  NOT NULL,
+    ccity varchar(75)  NOT NULL,
+    ctype varchar(75)  NOT NULL,
+    member_type int(1) NOT NULL)";
+
+    //Checking if connection is succesful
+
+    if (!mysqli_query($conn, $sql_query)) {
+        echo "Error in creating table : " .mysqli_error($conn);
+    }	
+//Creating meeting table
+
+    $sql_query ="CREATE TABLE IF NOT EXISTS meeting(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+    bookname varchar(225) NOT NULL,
+    meetingdate date NOT NULL,
+    meetingtime time NOT NULL,
+    meetinglink varchar(225) NOT NULL,
+    meetinglocation varchar(75) NOT NULL,
+    clubname varchar(75)  NOT NULL)";
+    
+
+    //Checking if connection is succesful
+
+    if (!mysqli_query($conn, $sql_query)) {
+        echo "Error in creating table : " .mysqli_error($conn);
+    }
+
+    //Creating currently reading table
+
+
+    $sql_query ="CREATE TABLE IF NOT EXISTS creading(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+    book varchar(225) NOT NULL,
+    author varchar(225) NOT NULL,
+    startdate date NOT NULL,
+    finishdate date NOT NULL,
+    note varchar(225) NOT NULL,
+    clubname varchar(75)  NOT NULL)";
+    
+
+    //Checking if connection is succesful
+
+    if (!mysqli_query($conn, $sql_query)) {
+        echo "Error in creating table : " .mysqli_error($conn);
+    }
+
+//Creating messages table
+    
+$sql_query ="CREATE TABLE IF NOT EXISTS logs(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+    username varchar(225)  NOT NULL,
+    msg text  NOT NULL,
+    clubname varchar(75)  NOT NULL)";
+    
+
+    //Checking if connection is succesful
+
+    if (!mysqli_query($conn, $sql_query)) {
+        echo "Error in creating table : " .mysqli_error($conn);
+    }
+
+ ?>
+
+
 
 //REGISTERING A CLUB
 if (isset($_POST['create'])) {
@@ -104,50 +174,6 @@ if (isset($_POST['create'])) {
     	header('location: admin-dashboard.php');
 
     }
-
-}
-
-//LOGIN USER
-if (isset($_POST['signin'])) {
-	//Getting input from user
-	$username= mysqli_real_escape_string($connection, $_POST['username']);
-    $password= mysqli_real_escape_string($connection, $_POST['password']);
-
-    //Error handling
-    if(empty($username)){
-        array_push($errors, "Username is required");
- 	}
-    if(empty($password)){
-    	array_push($errors, "Password is required");
-    }
-
-if (count($errors) == 0) {
-    $uname="admin";
-    $password = md5($password);
-    $select_query ="SELECT * FROM User WHERE username='$uname' AND password='$password'";
-    $results =mysqli_query($connection,$select_query);
-    if (mysqli_num_rows($results) ==1) {
-        //track logged in users using sessions NB:include session_start at the top of the file
-        $_SESSION['username'] =$username;
-        header('location: home_admin.php');
-    }else {
-        array_push($errors, "Wrong username or password");
-    }
-  }
-
-if (count($errors) == 0) {
-    $password = md5($password);
-    $select_query ="SELECT * FROM User WHERE username='$username' AND password='$password'";
-    $results =mysqli_query($connection,$select_query);
-    if (mysqli_num_rows($results) ==1) {
-        //track logged in users using sessions NB:include session_start at the top of the file
-        $_SESSION['username'] =$username;
-        $_SESSION['success'] ="You are now logged in";
-        header('location: home.php');
-    }else {
-        array_push($errors, "Wrong username or password");
-    }
-  }
 
 }
 
@@ -202,5 +228,51 @@ if (isset($_POST['register'])) {
     }
 
 }
+
+//LOGIN USER
+if (isset($_POST['signin'])) {
+	//Getting input from user
+	$username= mysqli_real_escape_string($connection, $_POST['username']);
+    $password= mysqli_real_escape_string($connection, $_POST['password']);
+
+    //Error handling
+    if(empty($username)){
+        array_push($errors, "Username is required");
+ 	}
+    if(empty($password)){
+    	array_push($errors, "Password is required");
+    }
+
+// if (count($errors) == 0) {
+//     $uname="admin";
+//     $password = md5($password);
+//     $select_query ="SELECT * FROM User WHERE username='$uname' AND password='$password'";
+//     $results =mysqli_query($connection,$select_query);
+//     if (mysqli_num_rows($results) ==1) {
+//         //track logged in users using sessions NB:include session_start at the top of the file
+//         $_SESSION['username'] =$username;
+//         header('location: home_admin.php');
+//     }else {
+//         array_push($errors, "Wrong username or password");
+//     }
+//   }
+
+if (count($errors) == 0) {
+    $password = md5($password);
+    $select_query ="SELECT * FROM User WHERE username='$username' AND password='$password'";
+    $results =mysqli_query($connection,$select_query);
+    if (mysqli_num_rows($results) ==1) {
+        //track logged in users using sessions NB:include session_start at the top of the file
+        $_SESSION['username'] =$username;
+        $_SESSION['success'] ="You are now logged in";
+        header('location: home.php');
+    }else {
+        array_push($errors, "Wrong username or password");
+    }
+  }
+
+}
+
+
  
 ?>

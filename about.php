@@ -1,4 +1,6 @@
-
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +33,7 @@
                     <header class="header-container">
                     <nav class="navbar">
                         <div class="navbar-header">
-                            <div class="navbar-brand logo"><a href="index.html" aria-label="Link to Shelf Indulgence&#x27;s Homepage"><img width="233" height="30" src="static/media/logo.png" class="img-responsive" alt="" /></a></div>
+                            <div class="navbar-brand logo"><a href="home.php" aria-label="Link to Shelf Indulgence&#x27;s Homepage"><img width="233" height="30" src="static/media/logo.png" class="img-responsive" alt="" /></a></div>
                         </div>
                         <div class="skip-to-content"><a href="#content">Skip to content</a></div>
                         <div class="navbar-collapse">
@@ -48,11 +50,22 @@
                                                 <li class="m-sub-item"><a href="https://www.libgen.is/" target="_blank" class="m-link">Library Genesis</a></li>
                                             </ul>
                                         </li>
-                                        <li class="m-item"><a href="signin.php" class="m-link">Join a book club</a></li>
-                                        <li class="m-item"><a href="signin.php" class="m-link">Shop</a></li>
-                                        <li class="m-item"><a href="#" class="m-link" >About</a></li>
-                                        <li class="m-item"><a href="signin.php" class="m-link">Sign in</a></li>
-                                        <li class="m-item"><a href="getstarted.php" class="mtr-button btn-white">Sign up</a></li>
+                                        <li class="m-item"><a href="" class="m-link">clubs</a>
+                                            <ul class="sub-menu sub-menu-user sub-menu-block">
+                                                 <li class="m-sub-item"><a href="joinclub.php" class="m-link">Join a club</a></li>
+                                                <li class="m-sub-item"><a href="myclubs.php"  class="m-link">My clubs</a></li>
+                                                <li class="m-sub-item"><a href="create-club.php"  class="m-link">Create club</a></li>
+                                            </ul>
+                                            
+                                        </li>
+                                        <li class="m-item"><a href="shop.php" class="m-link">Shop</a></li>
+                                        <li class="m-item"><a href="#" class="m-link">About</a></li>
+                                        
+                                        <li class="m-item"><a href="profile.php" class="mtr-button btn-white">
+                                            <?php if (isset($_SESSION['username'])) : ?>
+                                                    <h3><?php echo $_SESSION['username']; ?></h3>
+                                                <?php endif ?>
+                                        </a></li>
                                         
                                     </ul>
                                 </div>
@@ -69,7 +82,7 @@ One of the biggest challenges to novice book readers who love to read hardcopy p
                             </div>
                         </div>
                     </main>
-                   
+                    
                 </div>
             </div>
             <div class="Toastify"></div>

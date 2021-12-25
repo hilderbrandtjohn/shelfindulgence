@@ -38,16 +38,13 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- Font tags-->
-    <link rel="preload" as="font" href="static/media/bookclubz.71358ad4.woff2" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="static/media/glyphicons-halflings-regular.448c34a5.woff2" type="font/woff2" crossorigin="anonymous">
+   
     <!-- End Font tags -->
 
     <!-- Style Tags-->
     <link rel="stylesheet" href="static/css/vendors~main.css">
     <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/AboutPage.css">
     <link  rel="stylesheet" href="static/css/SigninPage.css">
-    <link rel="stylesheet" href="static/css/vendors~react-slick.css">
     <!-- End Style Tags -->
 
     
@@ -87,16 +84,14 @@
                                             
                                         </li>
                                         <li class="m-item"><a href="shop.php" class="m-link">Shop</a></li>
-                                        <li class="m-item"><a href="about.html" class="m-link">About</a></li>
+                                        <li class="m-item"><a href="about.php" class="m-link">About</a></li>
                                         
-                                        <li class="m-item"><a href="#" class="mtr-button btn-white">
+                                        <li class="m-item"><a href="profile.php" class="mtr-button btn-white">
                                             <?php if (isset($_SESSION['username'])) : ?>
                                                     <h3><?php echo $_SESSION['username']; ?></h3>
                                                 <?php endif ?>
                                         </a></li>
-                                        <li class="m-item text-center hidden-md hidden-lg">
-                                            <h4 class="mb-title">The best website<br />for organizing your book club</h4><a href="signup.html" class="btn btn-default-corner bg-transparent btn-create-club">Create a club</a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -110,27 +105,35 @@
                                     <table class="table">
                                         <tr>
                                             <th>Username</th>
-                                            <td><input type="text" name="username" value="<?php echo $row['username'];?>" readOnly="true"></td>
+                                            <td>
+                                                <input type="text" maxLength="255"  aria-label="Your Username" name="username" aria-required="true" value="<?php echo $row['username'];?>"  class="form-control" readOnly="true"/>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th>Email</th>
-                                            <td><input type="text" name="email" value="<?php echo $row['email'];?>" required></td>
+                                            <td>
+                                                <input type="text" maxLength="255"  aria-label="Your email" name="email" aria-required="true" value="<?php echo $row['email'];?>"  class="form-control" required/>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th>State/County</th>
-                                            <td><input type="text" name="state" value="<?php echo $row['state'];?>" required></td>
+                                            <td>
+                                                <input type="text" maxLength="255"  aria-label="Your state" name="state" aria-required="true" value="<?php echo $row['state'];?>"  class="form-control" required/>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th>City/Town</th>
-                                            <td><input type="text" name="city" value="<?php echo $row['city'];?>" required></td>
+                                            <td>
+                                                <input type="text" maxLength="255"  aria-label="Your city" name="city" aria-required="true" value="<?php echo $row['city'];?>"  class="form-control" required/>
+                                            </td>
                                         </tr>
                                         
                                     </table>
-                                    <input type="submit" name="save_change" value="Change" class="btn btn-primary">
-                                    <input type="reset" value="cancel" class="btn btn-default">
+                                    <input type="submit" name="save_change" value="Change" class="mtr-button btn-white">
+                                    <input type="reset" value="cancel" class="mtr-button btn-white">
                                 </form>
                                 <br/>
-                                <a href="profile.php" class="btn btn-success">Confirm</a>
+                                <a href="profile.php" class="mtr-button">Confirm</a>
 
                         </div>
                         <div class="right-container" style="background-image:url(static/media/bg-sign.jpg)"></div>
@@ -188,128 +191,6 @@
             <div class="Toastify"></div>
         </div>
     </div>
-
-
-    <script src='https://js.sentry-cdn.com/1c8495df5e944e25a338de5ddd1fa7cb.min.js' crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        if (typeof Sentry !== 'undefined') {
-            Sentry.onLoad(function() {
-                Sentry.init({
-                    release: "64195a2",
-                    environment: "production",
-                    allowUrls: [
-                        "https://browser.sentry-cdn/",
-                        "https://bookclubz.com/"
-                    ]
-                });
-            });
-        }
-    </script>
-
-
-
-    <img src="https://www.shareasale.com/sale.cfm?tracking=5955298&amount=0.00&merchantID=109298&transtype=lead" style="opacity: 0; visibility: hidden; position: absolute;" width="1" height="1">
-
-
-
-
-    <!-- Script Tags-->
-    <script id="__LOADABLE_REQUIRED_CHUNKS__" type="application/json">
-        [108, 0, 7, 1, 2, 66, 69, 133, 107]
-    </script>
-    <script id="__LOADABLE_REQUIRED_CHUNKS___ext" type="application/json">
-        {
-            "namedChunks": ["react-smartbanner", "HomePage-jsx", "ImageItem", "react-slick"]
-        }
-    </script>
-    <script async data-chunk="main" src="static/js/runtime.b09c94d6.js"></script>
-    <script async data-chunk="main" src="static/js/vendors~main.e913675b.chunk.js"></script>
-    <script async data-chunk="main" src="static/js/main.90b7755d.chunk.js"></script>
-    <script async data-chunk="react-smartbanner" src="static/js/react-smartbanner.b9ccb7cf.chunk.js"></script>
-    <script async data-chunk="HomePage-jsx" src="static/js/vendors~AboutOurClubPage-jsx~AboutPage-jsx~AdminDashboardPage-jsx~BlogDetailPage-jsx~BlogsByCategory~5112d84f.5bd938ae.chunk.js"></script>
-    <script async data-chunk="HomePage-jsx" src="static/js/vendors~BookDetailPage-jsx~DetailJoinABookClubPage-jsx~HomePage-jsx~HomePageB-jsx~JoinABookClubByCat~75caafd6.d74d6503.chunk.js"></script>
-    <script async data-chunk="HomePage-jsx" src="static/js/AboutOurClubPage-jsx~AboutPage-jsx~AdminDashboardPage-jsx~BlogDetailPage-jsx~BlogsByCategoryPage-jsx~19d20ad4.3519e182.chunk.js"></script>
-    <script async data-chunk="HomePage-jsx" src="static/js/AboutPage-jsx~BlogDetailPage-jsx~BlogsByCategoryPage-jsx~BlogsPage-jsx~BookDetailPage-jsx~BookOfTheM~eb2311c5.4e407db1.chunk.js"></script>
-    <script async data-chunk="HomePage-jsx" src="static/js/HomePage-jsx.1f070337.chunk.js"></script>
-    <script async data-chunk="ImageItem" src="static/js/ImageItem.dee7c36c.chunk.js"></script>
-    <script async data-chunk="react-slick" src="static/js/vendors~react-slick.fd36e0ac.chunk.js"></script>
-    <script async data-chunk="react-slick" src="static/js/react-slick.2e0a7ab9.chunk.js"></script>
-    <!-- End Script Tags -->
-
-    <script type="text/javascript">
-        if (typeof window.mixpanel === 'undefined') {
-            console.log('Mixpanel not loaded.')
-            window.mixpanel = {
-                track: function(eventName) {
-                    if (eventName === undefined) {
-                        eventName = 'no eventName provided'
-                    }
-                    console.log("Event " + eventName + " sent to undefined mixpanel.track function")
-                },
-                identify: function(eventName) {
-                    if (eventName === undefined) {
-                        eventName = 'no eventName provided'
-                    }
-                    console.log("Event " + eventName + " sent to undefined mixpanel.identify function")
-                },
-                people: {
-                    set: function() {}
-                }
-            }
-        }
-        if (typeof window.gtag === 'undefined') {
-            console.log('Gtag not loaded.')
-            window.gtag = function(eventName) {
-                if (eventName === undefined) {
-                    eventName = 'no eventName provided'
-                }
-                console.log("Event " + eventName + " sent to undefined gtag function")
-            }
-        }
-        if (typeof window.fbq === 'undefined') {
-            console.log('fbq not loaded.')
-            window.fbq = function(eventName) {
-                if (eventName === undefined) {
-                    eventName = 'no eventName provided'
-                }
-                console.log("Event " + eventName + " sent to undefined fbq function")
-            }
-        }
-    </script>
-
-
-
-    <script type="text/javascript">
-        if (window.location.pathname === '/') {
-            mixpanel.track('screen_view', {
-                'screen_name': 'Home page',
-                'user_type': 'anonymous'
-            });
-            gtag('event', 'screen_view', {
-                'screen_name': 'Home page',
-                'user_type': 'anonymous'
-            });
-            fbq('track', 'PageView', {
-                'content_name': 'Home page'
-            });
-        }
-        if (window.location.pathname === '/signup') {
-            mixpanel.track('screen_view', {
-                'screen_name': 'Signup page',
-                'user_type': 'anonymous'
-            });
-            gtag('event', 'screen_view', {
-                'screen_name': 'Signup page',
-                'user_type': 'anonymous'
-            });
-            fbq('track', 'PageView', {
-                'content_name': 'Signup page'
-            });
-        }
-    </script>
-
-
-
 </body>
 
 </html>

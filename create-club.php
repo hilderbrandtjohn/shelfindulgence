@@ -19,7 +19,6 @@ session_start();
     <!-- Style Tags-->
     <link rel="stylesheet" href="static/css/vendors~main.css">
     <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/vendors~AboutOurClubPage.css">
     <link rel="stylesheet" href="static/css/CreateClubPage.css">
     <!-- End Style Tags -->
 </head>
@@ -37,11 +36,11 @@ session_start();
                         <div class="skip-to-content"><a href="#content">Skip to content</a></div>
                         <div class="navbar-collapse">
                             <div class="nav-wrapper">
-                                <div class="header-group-button"><button id="bt-open-menu" type="button" aria-label="Open menu" class="btn btn-open-menu lines-button x "><span class="lines"></span></button></div><a href="signin.php" class="btn-signin-rw ">Sign in</a>
+                                
                                 <div aria-hidden="false" tabindex="-1" class="nav-container ">
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
-                                        <li class="m-item" ><a href="" class="m-link">Resources <span class="ficon ficon-arrow-down-medium" aria-hidden="true"></span></a>
+                                        <li class="m-item" ><a href="" class="m-link">Resources</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                 <li class="m-sub-item"><a href="https://www.goodreads.com/" target="_blank" class="m-link">Good Reads</a></li>
                                                 <li class="m-sub-item"><a href="https://www.librarything.com/" target="_blank" class="m-link">Library Thing</a></li>
@@ -57,7 +56,7 @@ session_start();
                                             
                                         </li>
                                         <li class="m-item"><a href="shop.php" class="m-link">Shop</a></li>
-                                        <li class="m-item"><a href="about.html" class="m-link">About</a></li>
+                                        <li class="m-item"><a href="about.php" class="m-link">About</a></li>
                                         <li class="m-item"><a href="" class="m-link">clubs</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                  <li class="m-sub-item"><a href="joinclub.php" class="m-link">Join a club</a></li>
@@ -158,97 +157,6 @@ session_start();
             <div class="Toastify"></div>
         </div>
     </div>
-
-
-    <script src='https://js.sentry-cdn.com/1c8495df5e944e25a338de5ddd1fa7cb.min.js' crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        if (typeof Sentry !== 'undefined') {
-            Sentry.onLoad(function() {
-                Sentry.init({
-                    release: "64195a2",
-                    environment: "production",
-                    allowUrls: [
-                        "https://browser.sentry-cdn/",
-                        "https://bookclubz.com/"
-                    ]
-                });
-            });
-        }
-    </script>
-
-
-
-    <img src="https://www.shareasale.com/sale.cfm?tracking=5955467&amount=0.00&merchantID=109298&transtype=lead" style="opacity: 0; visibility: hidden; position: absolute;" width="1" height="1">
-
-
-
-
-    <!-- Script Tags-->
-   
-    <!-- End Script Tags -->
-
-    <script type="text/javascript">
-        if (typeof window.mixpanel === 'undefined') {
-            console.log('Mixpanel not loaded.')
-            window.mixpanel = {
-                track: function(eventName) {
-                    if (eventName === undefined) {
-                        eventName = 'no eventName provided'
-                    }
-                    console.log("Event " + eventName + " sent to undefined mixpanel.track function")
-                },
-                identify: function(eventName) {
-                    if (eventName === undefined) {
-                        eventName = 'no eventName provided'
-                    }
-                    console.log("Event " + eventName + " sent to undefined mixpanel.identify function")
-                },
-                people: {
-                    set: function() {}
-                }
-            }
-        }
-        if (typeof window.gtag === 'undefined') {
-            console.log('Gtag not loaded.')
-            window.gtag = function(eventName) {
-                if (eventName === undefined) {
-                    eventName = 'no eventName provided'
-                }
-                console.log("Event " + eventName + " sent to undefined gtag function")
-            }
-        }
-        if (typeof window.fbq === 'undefined') {
-            console.log('fbq not loaded.')
-            window.fbq = function(eventName) {
-                if (eventName === undefined) {
-                    eventName = 'no eventName provided'
-                }
-                console.log("Event " + eventName + " sent to undefined fbq function")
-            }
-        }
-    </script>
-
-
-
-
-    <script type="text/javascript">
-        if (typeof mixpanel !== 'undefined') {
-            mixpanel.identify("195998");
-            mixpanel.people.set({
-                "$name": "",
-            });
-        }
-        if (typeof Sentry !== 'undefined') {
-            Sentry.configureScope(function(scope) {
-                scope.setUser({
-                    "id": "195998"
-                })
-            });
-        }
-    </script>
-
-
-
 </body>
 
 </html>

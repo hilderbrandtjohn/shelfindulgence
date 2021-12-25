@@ -23,7 +23,6 @@ $result= getReadByClubname($conn, $clubname);
     <link rel="stylesheet" href="static/css/vendors~main.css">
     <link rel="stylesheet" href="static/css/main.css">
     <link rel="stylesheet" href="static/css/CurrentlyReadingPage.css">
-    <link rel="stylesheet" href="static/css/InvitationLink.css">
     <!-- End Style Tags -->
 
 </head>
@@ -45,7 +44,7 @@ $result= getReadByClubname($conn, $clubname);
                                 <div aria-hidden="false" tabindex="-1" class="nav-container ">
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
-                                        <li class="m-item" ><a href="" class="m-link">Resources <span class="ficon ficon-arrow-down-medium" aria-hidden="true"></span></a>
+                                        <li class="m-item" ><a href="" class="m-link">Resources</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                 <li class="m-sub-item"><a href="https://www.goodreads.com/" target="_blank" class="m-link">Good Reads</a></li>
                                                 <li class="m-sub-item"><a href="https://www.librarything.com/" target="_blank" class="m-link">Library Thing</a></li>
@@ -61,17 +60,15 @@ $result= getReadByClubname($conn, $clubname);
                                             </ul>
                                             
                                         </li>
-                                        <li class="m-item"><a href="signin.php" class="m-link">Shop</a></li>
-                                        <li class="m-item"><a href="about.html" class="m-link">About</a></li>
+                                        <li class="m-item"><a href="shop.php" class="m-link">Shop</a></li>
+                                        <li class="m-item"><a href="about.php" class="m-link">About</a></li>
                                         
-                                        <li class="m-item"><a href="getstarted.html" class="mtr-button btn-white">
+                                        <li class="m-item"><a href="profile.php" class="mtr-button btn-white">
                                             <?php if (isset($_SESSION['username'])) : ?>
                                                     <h3><?php echo $_SESSION['username']; ?></h3>
                                                 <?php endif ?>
                                         </a></li>
-                                        <li class="m-item text-center hidden-md hidden-lg">
-                                            <h4 class="mb-title">The best website<br />for organizing your book club</h4><a href="signup.html" class="btn btn-default-corner bg-transparent btn-create-club">Create a club</a>
-                                        </li>
+                                       
                                     </ul>
                                 </div>
                             </div>
@@ -88,13 +85,13 @@ $result= getReadByClubname($conn, $clubname);
                                             <div class="avatar-content">
                                                 
                                                 <div class="club-info">
-                                                    <div>
-                                                        <h3><?php echo $clubname; ?></h3>
+                                                    <div style="text-transform: capitalize;font-weight: bold;font-style: oblique;font-size: 24px;font-family: bradler hand itc;">
+                                                        <?php echo $clubname; ?>
                                                     </div>
-                                                    <div>
+                                                    <div style="text-transform: capitalize;font-style: oblique;font-size: 20px;font-family: bradler hand itc;">
                                                         <br>
-                                                        <br>
-                                                        <h3>Welcome  <?php echo $username; ?></h3>
+                                            
+                                                        Welcome  <?php echo $username; ?>
                                                     </div>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -197,134 +194,6 @@ $result= getReadByClubname($conn, $clubname);
             <div class="Toastify"></div>
         </div>
     </div>
-
-
-    <script src='https://js.sentry-cdn.com/1c8495df5e944e25a338de5ddd1fa7cb.min.js' crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        if (typeof Sentry !== 'undefined') {
-            Sentry.onLoad(function() {
-                Sentry.init({
-                    release: "1c6c757",
-                    environment: "production",
-                    allowUrls: [
-                        "https://browser.sentry-cdn/",
-                        "https://bookclubz.com/"
-                    ]
-                });
-            });
-        }
-    </script>
-
-
-
-
-    <!-- Script Tags-->
-    <script id="__LOADABLE_REQUIRED_CHUNKS__" type="application/json">
-        [123, 43, 0, 1, 2, 4, 49, 142, 3, 115, 78, 145, 105, 109, 119, 74, 41, 17, 124, 111]
-    </script>
-    <script id="__LOADABLE_REQUIRED_CHUNKS___ext" type="application/json">
-        {
-            "namedChunks": ["react-smartbanner", "CookiesSolution", "CurrentlyReadingPage-jsx", "UploadAvatar", "LazyBackground", "react-modal", "SidebarMenu", "SocialShare", "react-copy-to-clipboard", "InvitationLink", "ConfirmPopup", "BlockHeader", "react-tiny-spin", "SubscribeBlock"]
-        }
-    </script>
-    <script async data-chunk="main" src="static/js/runtime.77320419.js"></script>
-    <script async data-chunk="main" src="static/js/vendors~main.21dc21c6.chunk.js"></script>
-    <script async data-chunk="main" src="static/js/main.6e4e009f.chunk.js"></script>
-    <script async data-chunk="react-smartbanner" src="static/js/react-smartbanner.81c77857.chunk.js"></script>
-    <script async data-chunk="CookiesSolution" src="static/js/CookiesSolution.b1242872.chunk.js"></script>
-    <script async data-chunk="CurrentlyReadingPage-jsx" src="static/js/vendors~AboutOurClubPage-jsx~AboutPage-jsx~AdminDashboardPage-jsx~BlogDetailPage-jsx~BlogsByCategory~8591dfa7.bebc96dd.chunk.js"></script>
-    <script async data-chunk="CurrentlyReadingPage-jsx" src="static/js/vendors~AboutOurClubPage-jsx~AboutPage-jsx~AdminDashboardPage-jsx~BlogDetailPage-jsx~BlogsByCategory~f63e9864.154ea53b.chunk.js"></script>
-    <script async data-chunk="CurrentlyReadingPage-jsx" src="static/js/vendors~AboutOurClubPage-jsx~AboutPage-jsx~AdminDashboardPage-jsx~BlogDetailPage-jsx~BlogsPage-jsx~B~fc3e1284.915cc5fe.chunk.js"></script>
-    <script async data-chunk="CurrentlyReadingPage-jsx" src="static/js/vendors~AboutOurClubPage-jsx~AdminDashboardPage-jsx~BookDetailPage-jsx~BookInspirationPage-jsx~ClubA~a0cd9e04.231076c0.chunk.js"></script>
-    <script async data-chunk="CurrentlyReadingPage-jsx" src="static/js/CurrentlyReadingPage-jsx.327df62a.chunk.js"></script>
-    <script async data-chunk="UploadAvatar" src="static/js/vendors~UploadAvatar.6a02ce30.chunk.js"></script>
-    <script async data-chunk="UploadAvatar" src="static/js/AboutPage-jsx~BlogDetailPage-jsx~BlogsByCategoryPage-jsx~BlogsPage-jsx~BookOfTheMonthPage-jsx~Bookcl~ed7f956c.9f802313.chunk.js"></script>
-    <script async data-chunk="UploadAvatar" src="static/js/UploadAvatar.442df50b.chunk.js"></script>
-    <script async data-chunk="LazyBackground" src="static/js/LazyBackground.2eb47101.chunk.js"></script>
-    <script async data-chunk="react-modal" src="static/js/vendors~react-modal.ded807cd.chunk.js"></script>
-    <script async data-chunk="SidebarMenu" src="static/js/SidebarMenu.8c57f200.chunk.js"></script>
-    <script async data-chunk="SocialShare" src="static/js/SocialShare.604504a3.chunk.js"></script>
-    <script async data-chunk="react-copy-to-clipboard" src="static/js/react-copy-to-clipboard.5ae69f01.chunk.js"></script>
-    <script async data-chunk="InvitationLink" src="static/js/InvitationLink.f44ab2a4.chunk.js"></script>
-    <script async data-chunk="ConfirmPopup" src="static/js/ConfirmPopup.98ef8f1b.chunk.js"></script>
-    <script async data-chunk="BlockHeader" src="static/js/BlockHeader.76d2851b.chunk.js"></script>
-    <script async data-chunk="react-tiny-spin" src="static/js/react-tiny-spin.4d9de0d7.chunk.js"></script>
-    <script async data-chunk="SubscribeBlock" src="static/js/SubscribeBlock.4d6686f8.chunk.js"></script>
-    <!-- End Script Tags -->
-
-    <script type="text/javascript">
-        if (typeof window.mixpanel === 'undefined') {
-            console.log('Mixpanel not loaded.')
-            window.mixpanel = {
-                track: function(eventName) {
-                    if (eventName === undefined) {
-                        eventName = 'no eventName provided'
-                    }
-                    console.log("Event " + eventName + " sent to undefined mixpanel.track function")
-                },
-                identify: function(eventName) {
-                    if (eventName === undefined) {
-                        eventName = 'no eventName provided'
-                    }
-                    console.log("Event " + eventName + " sent to undefined mixpanel.identify function")
-                },
-                people: {
-                    set: function() {}
-                }
-            }
-        }
-        if (typeof window.gtag === 'undefined') {
-            console.log('Gtag not loaded.')
-            window.gtag = function(eventName) {
-                if (eventName === undefined) {
-                    eventName = 'no eventName provided'
-                }
-                console.log("Event " + eventName + " sent to undefined gtag function")
-            }
-        }
-        if (typeof window.fbq === 'undefined') {
-            console.log('fbq not loaded.')
-            window.fbq = function(eventName) {
-                if (eventName === undefined) {
-                    eventName = 'no eventName provided'
-                }
-                console.log("Event " + eventName + " sent to undefined fbq function")
-            }
-        }
-    </script>
-
-
-
-    <script type="text/javascript">
-        if (window.location.pathname === '/') {
-            mixpanel.track('screen_view', {
-                'screen_name': 'Home page',
-                'user_type': 'anonymous'
-            });
-            gtag('event', 'screen_view', {
-                'screen_name': 'Home page',
-                'user_type': 'anonymous'
-            });
-            fbq('track', 'PageView', {
-                'content_name': 'Home page'
-            });
-        }
-        if (window.location.pathname === '/signup') {
-            mixpanel.track('screen_view', {
-                'screen_name': 'Signup page',
-                'user_type': 'anonymous'
-            });
-            gtag('event', 'screen_view', {
-                'screen_name': 'Signup page',
-                'user_type': 'anonymous'
-            });
-            fbq('track', 'PageView', {
-                'content_name': 'Signup page'
-            });
-        }
-    </script>
-
-
 </body>
 
 </html>

@@ -49,9 +49,7 @@ $query = "SELECT about FROM club WHERE clubname = '$clubname'";
     <!-- Style Tags-->
     <link rel="stylesheet" href="static/css/vendors~main.css">
     <link rel="stylesheet" href="static/css/main.css">
-    <link rel="stylesheet" href="static/css/vendors~AboutOurClubPage.css">
     <link rel="stylesheet" href="static/css/AdminDashboardPage.css">
-    <link rel="stylesheet" href="static/css/InvitationLink.css">
     <!-- End Style Tags -->
 
 </head>
@@ -73,7 +71,7 @@ $query = "SELECT about FROM club WHERE clubname = '$clubname'";
                                 <div aria-hidden="false" tabindex="-1" class="nav-container ">
                                     <ul class="nav bz-navbar-nav navbar-user"></ul>
                                     <ul class="nav bz-navbar-nav navbar-right">
-                                        <li class="m-item" ><a href="" class="m-link">Resources <span class="ficon ficon-arrow-down-medium" aria-hidden="true"></span></a>
+                                        <li class="m-item" ><a href="" class="m-link">Resources</a>
                                             <ul class="sub-menu sub-menu-user sub-menu-block">
                                                 <li class="m-sub-item"><a href="https://www.goodreads.com/" target="_blank" class="m-link">Good Reads</a></li>
                                                 <li class="m-sub-item"><a href="https://www.librarything.com/" target="_blank" class="m-link">Library Thing</a></li>
@@ -90,7 +88,7 @@ $query = "SELECT about FROM club WHERE clubname = '$clubname'";
                                             
                                         </li>
                                         <li class="m-item"><a href="shop.php" class="m-link">Shop</a></li>
-                                        <li class="m-item"><a href="about.html" class="m-link">About</a></li>
+                                        <li class="m-item"><a href="about.php" class="m-link">About</a></li>
                                         
                                         <li class="m-item"><a href="profile.php" class="mtr-button btn-white">
                                             <?php if (isset($_SESSION['username'])) : ?>
@@ -116,13 +114,13 @@ $query = "SELECT about FROM club WHERE clubname = '$clubname'";
                                             <div class="avatar-content">
                                                 
                                                 <div class="club-info">
-                                                    <div>
-                                                        <h3><?php echo $clubname; ?></h3>
+                                                    <div style="text-transform: capitalize;font-weight: bold;font-style: oblique;font-size: 24px;font-family: bradler hand itc;">
+                                                        <?php echo $clubname; ?>
                                                     </div>
-                                                    <div>
+                                                    <div style="text-transform: capitalize;font-style: oblique;font-size: 20px;font-family: bradler hand itc;">
                                                         <br>
-                                                        <br>
-                                                        <h3>Welcome  <?php echo $username; ?></h3>
+                                            
+                                                        Welcome  <?php echo $username; ?>
                                                     </div>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -153,7 +151,7 @@ $query = "SELECT about FROM club WHERE clubname = '$clubname'";
                                                         <form class="main-form" novalidate="" method="POST" action="about_edit.php?clubname=<?php echo $clubname; ?>">
                                                             
                                                             <div class="form-group undefined">
-                                                                <textarea name="about" cols="40" rows="10" ><?php echo $row['about'];?></textarea>
+                                                                <textarea style="border-radius:5px;box-shadow: 5px 10px #888888; " name="about" cols="40" rows="10" ><?php echo $row['about'];?></textarea>
                                                                 <span role="alert" class="notification-message error"></span></div>
                                                             
                                                             <div class="form-group button-group"><button name="update" type="submit"  class="mtr-button">Update</button></div>
@@ -171,7 +169,7 @@ $query = "SELECT about FROM club WHERE clubname = '$clubname'";
                                                     </div>
                                                 </div>
                                                 <div class="admin-tasks update-description-task">
-                                                    <div class="image" style="width:117px;height:93px"><img class="img-responsive" src="static/media/description.d0042ce2.png" alt="" width="87" height="93" /></div>
+                                                    <div class="image" style="width:117px;height:93px"><img class="img-responsive" src="static/media/img-feature-7.f41d1090.webp" alt="" width="87" height="93" /></div>
                                                     <div class="content">
                                                         <h2 class="title">Get <?php echo $clubname; ?> moving</h2>
                                                         <p class="desc"><a href="add-reading.php?clubname=<?php echo $clubname; ?>">Add or remove to your reading list</a> <!-- -->and let the discussions begin.</p>
@@ -179,7 +177,7 @@ $query = "SELECT about FROM club WHERE clubname = '$clubname'";
                                                     </div>
                                                 </div>
                                                 <div class="admin-tasks update-description-task">
-                                                    <div class="image" style="width:117px;height:93px"><img class="img-responsive" src="static/media/description.d0042ce2.png" alt="" width="87" height="93" /></div>
+                                                    <div class="image" style="width:117px;height:93px"><img class="img-responsive" src="static/media/club-avatar.896facf6.png" alt="" width="87" height="93" /></div>
                                                     <div class="content">
                                                         <h2 class="title">Manage members on<?php echo $clubname; ?></h2>
                                                         <p class="desc"><a href="manage_user.php?clubname=<?php echo $clubname; ?>">View and remove users</a> <!-- -->and have controll.</p>
@@ -246,101 +244,6 @@ $query = "SELECT about FROM club WHERE clubname = '$clubname'";
             <div class="Toastify"></div>
         </div>
     </div>
-
-
-    <script src='https://js.sentry-cdn.com/1c8495df5e944e25a338de5ddd1fa7cb.min.js' crossorigin="anonymous"></script>
-    <script type="text/javascript">
-        if (typeof Sentry !== 'undefined') {
-            Sentry.onLoad(function() {
-                Sentry.init({
-                    release: "4bb8cc1",
-                    environment: "production",
-                    allowUrls: [
-                        "https://browser.sentry-cdn/",
-                        "https://Shelfindulgence.com/"
-                    ]
-                });
-            });
-        }
-    </script>
-
-
-
-
-
-    <script type="text/javascript">
-        if (typeof window.mixpanel === 'undefined') {
-            console.log('Mixpanel not loaded.')
-            window.mixpanel = {
-                track: function(eventName) {
-                    if (eventName === undefined) {
-                        eventName = 'no eventName provided'
-                    }
-                    console.log("Event " + eventName + " sent to undefined mixpanel.track function")
-                },
-                identify: function(eventName) {
-                    if (eventName === undefined) {
-                        eventName = 'no eventName provided'
-                    }
-                    console.log("Event " + eventName + " sent to undefined mixpanel.identify function")
-                },
-                people: {
-                    set: function() {}
-                }
-            }
-        }
-        if (typeof window.gtag === 'undefined') {
-            console.log('Gtag not loaded.')
-            window.gtag = function(eventName) {
-                if (eventName === undefined) {
-                    eventName = 'no eventName provided'
-                }
-                console.log("Event " + eventName + " sent to undefined gtag function")
-            }
-        }
-        if (typeof window.fbq === 'undefined') {
-            console.log('fbq not loaded.')
-            window.fbq = function(eventName) {
-                if (eventName === undefined) {
-                    eventName = 'no eventName provided'
-                }
-                console.log("Event " + eventName + " sent to undefined fbq function")
-            }
-        }
-    </script>
-
-
-
-    <script type="text/javascript">
-        if (window.location.pathname === '/') {
-            mixpanel.track('screen_view', {
-                'screen_name': 'Home page',
-                'user_type': 'anonymous'
-            });
-            gtag('event', 'screen_view', {
-                'screen_name': 'Home page',
-                'user_type': 'anonymous'
-            });
-            fbq('track', 'PageView', {
-                'content_name': 'Home page'
-            });
-        }
-        if (window.location.pathname === '/signup') {
-            mixpanel.track('screen_view', {
-                'screen_name': 'Signup page',
-                'user_type': 'anonymous'
-            });
-            gtag('event', 'screen_view', {
-                'screen_name': 'Signup page',
-                'user_type': 'anonymous'
-            });
-            fbq('track', 'PageView', {
-                'content_name': 'Signup page'
-            });
-        }
-    </script>
-
-
 </body>
 
 </html>
