@@ -29,12 +29,12 @@ Click on browse file and select “shelfindulgence.sql” file which is inside �
 Navigate to project homepage [http://localhost/shelfindulgence/](http://localhost/ecommerce/)
 4. **Explore manipulating**
 Login from the User’s login side. Just provide the Admin’s login detail, it will redirect you to Admin panel.
-system admin LOGIN
-username 
+
+system admin username 
 ```
 admin
 ```
-password
+system admin password
 ```
 admin
 ```
